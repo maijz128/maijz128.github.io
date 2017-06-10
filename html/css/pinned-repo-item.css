@@ -1,0 +1,128 @@
+
+.pinned-repos-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    list-style: none;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.pinned-repo-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 359px;
+
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 3px !important;
+    border-color: #d1d5da !important;
+    border: 1px #e1e4e8 solid !important;
+}
+.pinned-repo-item .pr-2 {
+    padding-right: 8px !important;
+}
+.pinned-repo-item .float-left {
+    float: left !important;
+}
+.pinned-repo-item .text-bold {
+    font-weight: 600 !important;
+}
+
+
+.pinned-repo-item-content{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+.pinned-repo-item-content a {
+    color: #0366d6;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.pinned-repo-item-content a:hover {
+    text-decoration: underline;
+}
+
+.pinned-repo-item-content .d-block {
+    display: block !important;
+}
+.pinned-repo-item-content .position-relative {
+    position: relative !important;
+}
+
+.pinned-repo-item-content .text-small {
+    font-size: 12px !important;
+}
+.pinned-repo-item-content .pinned-repo-desc {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+.pinned-repo-item-content .mb-3 {
+    margin-bottom: 16px !important;
+}
+.pinned-repo-item-content .mt-2 {
+    margin-top: 8px !important;
+}
+.pinned-repo-item-content .mb-0 {
+    margin-bottom: 0 !important;
+}
+.pinned-repo-item-content .text-gray {
+    color: #586069 !important;
+}
+.pinned-repo-item-content .f6 {
+    font-size: 12px !important;
+}
+
+.pinned-repo-item-content .repo-language-color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.pinned-repo-item-content .pinned-repository-handle {
+    padding-top: 1px;
+    color: #586069;
+}
+
+.pinned-repo-item-content .muted-link {
+    margin-left: 16px;
+}
+.pinned-repo-item-content .muted-link:hover {
+    color: #0366d6 !important;
+    text-decoration: none;
+}
+.pinned-repo-item-content .pinned-repo-meta {
+    display: inline-block;
+}
+.pinned-repo-item-content .muted-link {
+    color: #586069 !important;
+}
+
+.pinned-repo-item-content .home{
+    display: block;
+    background: url("home.svg");
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+

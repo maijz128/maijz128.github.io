@@ -1,0 +1,68 @@
+
+body {
+    min-width: 1020px;
+    word-wrap: break-word;
+}
+
+.vcard-detail .octicon {
+    color: #6a737d;
+}
+
+
+.tooltipped {
+    position: relative;
+}
+
+
+.vcard-names-container {
+    top: 0;
+}
+
+
+.avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+    border-radius: 3px;
+}
+
+.vcard-names {
+    line-height: 1;
+}
+.vcard-fullname {
+    font-size: 26px;
+    line-height: 30px;
+}
+.vcard-username {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #666;
+}
+
+.user-profile-bio {
+    margin-bottom: 12px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #6a737d;
+}
+
+.vcard-details {
+    list-style: none;
+}
+.vcard-details .css-truncate.css-truncate-target {
+    width: 100%;
+    max-width: 100%;
+}
+.vcard-detail .octicon {
+    float: left;
+    width: 16px;
+    margin-top: 3px;
+    /*margin-left: -24px;*/
+    margin-right: 5px;
+    color: #6a737d;
+    text-align: center;
+}
+
