@@ -6,10 +6,10 @@
 
 
 // 获得用户信息
-const URL_USER = "http://api.github.com/users/{{userName}}";
+const URL_USER = "https://api.github.com/users/{{userName}}";
 
 // 获得用户的所有库
-const URL_USER_REPOS = "http://api.github.com/users/{{userName}}/repos";
+const URL_USER_REPOS = "https://api.github.com/users/{{userName}}/repos";
 
 
 const URL_CONFIG = "config.json";
