@@ -98,3 +98,6 @@ body {
 .code-languages table td,.code-languages table th {
     padding: 4px 6px;
 }
+.code-languages table td div{
+    height: 20px;
+}
