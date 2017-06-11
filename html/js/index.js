@@ -16,10 +16,20 @@ const URL_CONFIG = "config.json";
 // 引用 https://github.com/ozh/github-colors
 const URL_COLORS = "html/github-languages-color/colors.json";
 
+const LINKS_ID_NAME = {
+    Email: "maijz128@gmail.com",
+    GitHub: "maijz128",
+    Twitter: "maijz128",
+    Facebook: "",
+    WeiBo: "",
+    QQ: ""
+};
+
 const _g = {};
 
 window.onload = function () {
     _g.languageColors = new LanguageColors();
+    _g.header = new Header();
 
     fetchJSON(URL_CONFIG).then(function (json) {
         _g.projects = new Projects(json, _g.languageColors);
@@ -32,9 +42,6 @@ function fetchJSON(url) {
     return fetch(url).then(function (response) {
         return response.json();
     });
-    //     .then(function (json) {
-    //     return json;
-    // });
 }
 
 function LanguageColors() {
@@ -145,6 +152,18 @@ function User(configJSON) {
     const url = URL_USER.replace("{{userName}}", configJSON.userName);
     fetchJSON(url).then(function (json) {
         self.appData.json = classExtend(self.appData.json, json);
+    });
+}
+
+function Header() {
+    const self = this;
+    self.appData = {
+        LINKS : LINKS_ID_NAME
+    };
+    self.app = new Vue({
+        el: "#header",
+        data: self.appData,
+        methods: {}
     });
 }
 
