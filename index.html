@@ -36,13 +36,13 @@
 
 
             <!--<ul class="header-nav float-left" role="navigation">-->
-                <!--<li class="header-nav-item">-->
-                    <!--<a href="/pulls" aria-label="Pull requests you created"-->
-                       <!--class=" header-nav-link"-->
-                       <!--data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p"-->
-                       <!--data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">-->
-                        <!--Pull requests-->
-                    <!--</a></li>-->
+            <!--<li class="header-nav-item">-->
+            <!--<a href="/pulls" aria-label="Pull requests you created"-->
+            <!--class=" header-nav-link"-->
+            <!--data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p"-->
+            <!--data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">-->
+            <!--Pull requests-->
+            <!--</a></li>-->
             <!--</ul>-->
 
         </div>
@@ -130,6 +130,52 @@
 
         <div class="col-9 float-left pl-2">
 
+            <div class="code-languages">
+                <h2 class="f4 mb-2 text-normal">编程语言</h2>
+                <table border="1" cellpadding="10">
+                    <thead>
+                    <tr>
+                        <th>Language</th>
+                        <th>使用频率</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td class="use-rate-3"></td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td class="use-rate-2"></td>
+                    </tr>
+                    <tr>
+                        <td>C#</td>
+                        <td class="use-rate-2"></td>
+                    </tr>
+                    <tr>
+                        <td>Java</td>
+                        <td class="use-rate-1"></td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td class="use-rate-0"></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="use-rate-legend">
+                    Less
+                    <ul>
+                        <li class="use-rate-0"></li>
+                        <li class="use-rate-1"></li>
+                        <li class="use-rate-2"></li>
+                        <li class="use-rate-3"></li>
+                        <li class="use-rate-4"></li>
+                    </ul>
+                    More
+                </div>
+            </div>
+
 
             <div id="projects">
 
@@ -155,11 +201,11 @@
                                 <p class="mb-0 f6 text-gray">
                                     <span class="repo-language-color pinned-repo-meta"
                                           v-bind:style="getLanguageColor(repo)"
-                                    v-show="repo.language"></span>
+                                          v-show="repo.language"></span>
                                     {{ repo.language }}
 
                                     <a v-bind:href="repo.html_url + '/stargazers'" class="pinned-repo-meta muted-link"
-                                    v-show="repo.stargazers_count > 0">
+                                       v-show="repo.stargazers_count > 0">
                                         <svg aria-label="stars" class="octicon octicon-star" height="16" role="img"
                                              version="1.1" viewBox="0 0 14 16" width="14">
                                             <path fill-rule="evenodd"
@@ -168,8 +214,9 @@
                                         {{ repo.stargazers_count }}
                                     </a>
 
-                                    <a v-bind:href="repo.html_url + '/network/members'" class="pinned-repo-meta muted-link"
-                                    v-show="repo.forks_count > 0">
+                                    <a v-bind:href="repo.html_url + '/network/members'"
+                                       class="pinned-repo-meta muted-link"
+                                       v-show="repo.forks_count > 0">
                                         <svg aria-label="fork" class="octicon octicon-repo-forked" height="16"
                                              role="img"
                                              version="1.1" viewBox="0 0 10 16" width="10">
