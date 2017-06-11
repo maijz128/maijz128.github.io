@@ -13,6 +13,7 @@ const URL_USER_REPOS = "https://api.github.com/users/{{userName}}/repos";
 
 
 const URL_CONFIG = "config.json";
+// 引用 https://github.com/ozh/github-colors
 const URL_COLORS = "html/github-languages-color/colors.json";
 
 const _g = {};
