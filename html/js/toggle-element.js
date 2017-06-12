@@ -4,6 +4,18 @@
  * Github: https://github.com/maijz128
  */
 
+/**
+ * Example:
+
+     <a class="toggle-el-switch" te-target="panel1"
+        te-closing="true" href="JavaScript:;">
+        <span class="toggle-el-show-hint">Hide Panel</span>
+        <span class="toggle-el-hide-hint">Show Panel</span>
+     </a>
+     <div id="panel1">
+
+     <div>
+ */
 
 const _TE_CLASS_NAME = "toggle-el-switch";
 const _TE_EL_CLOSING = 'toggle-el-closing';
