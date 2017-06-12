@@ -13,6 +13,7 @@ const URL_USER_REPOS = "https://api.github.com/users/{{userName}}/repos";
 
 
 const URL_CONFIG = "config.json";
+const URL_BOOKS = "books.json";
 // 引用 https://github.com/ozh/github-colors
 const URL_COLORS = "html/github-languages-color/colors.json";
 
@@ -43,6 +44,7 @@ const _g = {};
 window.onload = function () {
     _g.languageColors = new LanguageColors();
     _g.header = new Header();
+    _g.books = new Books();
 
     fetchJSON(URL_CONFIG).then(function (json) {
         _g.projects = new Projects(json, _g.languageColors);
@@ -119,6 +121,34 @@ function Projects(configJSON, languageColors) {
     });
 }
 
+function Books() {
+    const self = this;
+    self.appData = {
+        json: [{
+            "category": "改善代码",
+            "closing": true,
+            "books": [
+                {
+                    "title": "重构：改善既有代码的设计",
+                    "title_en": "Refactoring: Improving the Design of Existing Code",
+                    "pviews": "1",
+                    "links": {
+                        "douban": "https://book.douban.com/subject/4262627/"
+                    }
+                }
+            ]
+        }]
+    };
+    self.app = new Vue({
+        el: '#books-container',
+        data: self.appData,
+        methods: {}
+    });
+
+    fetchJSON(URL_BOOKS).then(function (json) {
+        self.appData.json = json;
+    });
+}
 
 function User(configJSON) {
     const self = this;
@@ -140,7 +170,7 @@ function User(configJSON) {
 function Header() {
     const self = this;
     self.appData = {
-        LINKS : LINKS_ID_NAME
+        LINKS: LINKS_ID_NAME
     };
     self.app = new Vue({
         el: "#header",

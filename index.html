@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="html/css/index.css">
     <link rel="stylesheet" href="html/css/header.css">
     <link rel="stylesheet" href="html/css/pinned-repo-item.css">
-
+    <link rel="stylesheet" href="html/css/pinned-book-item.css">
 
     <script src="html/js/toggle-element.js"></script>
     <script src="html/js/simple-tabs.js"></script>
@@ -51,14 +51,18 @@
 
             </a>
 
-            <ul class="header-nav float-left st-nav-tabs" role="navigation">
+            <ul class="header-nav float-right st-nav-tabs" role="navigation">
                 <li class="header-nav-item">
                     <a class="header-nav-link st-nav-tab" href="javascript:void(0);"
-                       st-target="pane-profile" st-active="true">Profile</a>
+                       st-target="pane-profile">Profile</a>
                 </li>
                 <li class="header-nav-item">
                     <a class="header-nav-link st-nav-tab" href="javascript:void(0);"
-                       st-target="pane-books" st-active="false">Books</a>
+                       st-target="pane-books" st-active="true">Books</a>
+                </li>
+                <li class="header-nav-item">
+                    <a class="header-nav-link st-nav-tab" href="javascript:void(0);"
+                       st-target="pane-self-improvement">程序员的自我修养</a>
                 </li>
             </ul>
 
@@ -66,7 +70,8 @@
     </div>
 </div>
 <div role="main">
-    <div class="container-lg clearfix px-3 mt-4">
+    <div id="pane-profile" class="container-lg clearfix px-3 mt-4">
+
         <div class="h-card col-3 float-left pr-3">
             <div id="user">
                 <a v-bind:href="json.html_url" class="u-photo d-block ">
@@ -144,7 +149,7 @@
             </div>
         </div>
 
-        <div id="pane-profile" class="col-9 float-left pl-2">
+        <div class="col-9 float-left pl-2">
 
             <div class="code-languages">
                 <h2 class="f4 mb-2 text-normal">编程语言</h2>
@@ -276,11 +281,70 @@
 
         </div>
 
-        <div id="pane-books" class="col-9 float-left pl-2">
-                books
-        </div>
-
     </div>
+
+    <div id="pane-books" class="container-lg clearfix px-3 mt-4">
+        <div class="h-card col-3 float-left pr-3"></div>
+
+        <div class="col-9 float-left pl-2">
+            <div id="books-container">
+
+                <div v-for="(categoryObj,  categoryIndex) in json">
+                    <h2 class="f4 mb-2 text-normal band">
+                        <span class="in-band">{{ categoryObj.category }}</span>
+                        <span class="out-of-band">
+                            <span>
+                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
+                                  v-bind:te-closing="categoryObj.closing"
+                                  href="JavaScript:;" title="toggle list">
+                                   <span class="inner toggle-el-show-hint">[−]</span>
+                                   <span class="inner toggle-el-hide-hint">[+]</span>
+                               </a>
+                            </span>
+                        </span>
+                    </h2>
+
+                    <ol class="pinned-books-list" v-bind:id="'category' + categoryIndex">
+
+                        <li class="pinned-book-item" v-for="book in categoryObj.books">
+                            <div class="pinned-book-item-content">
+                                <span class="d-block position-relative">
+                                    <a v-bind:href="book.links.douban || 'javascript:void(0);'" class="text-bold">
+                                        <span v-bind:title="book.name">{{ book.name }}</span>
+                                    </a>
+                                </span>
+
+                                <p class="name-original">
+                                    {{ book.name_original }}
+                                </p>
+                                <p class="pinned-desc text-gray text-small d-block mt-2 mb-3">
+                                    {{ book.bio }}</p>
+
+                                <p class="mb-0 f6 text-gray">
+                                    PViews: {{ book.pviews }}
+
+                                    <a class="pinned-meta muted-link" title="douban"
+                                       v-bind:href="book.links.douban"
+                                       v-show="book.links.douban">
+                                        <svg class="octicon " height="16" role="img"
+                                             version="1.1" viewBox="0 0 16 16" width="16">
+                                            <use xlink:href="#douban"></use>
+                                        </svg>
+                                    </a>
+
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pane-self-improvement" class="container-lg clearfix px-3 mt-4">
+        程序员的自我修养
+    </div>
+
 </div>
 
 
@@ -398,6 +462,24 @@
     <symbol id="tencent-qq" viewBox="0 0 1000 1000">
         <g>
             <path d="M500,990C229.4,990,10,770.6,10,500S229.4,10,500,10s490,219.4,490,490S770.6,990,500,990L500,990z M673.5,449c-4.1-19.2-10.2-30.6-10.2-30.6s0.3-28.1-30.6-91.9C601.8,262.7,510.2,255,510.2,255H500c0,0-91.6,7.7-122.5,71.5c-30.9,63.8-30.6,91.9-30.6,91.9s-6.1,11.5-10.2,30.6c-4.1,19.2,0,30.6,0,30.6s-52.3,53.4-51,91.9c1.3,38.5,10.7,63,30.6,40.8c19.9-22.2,20.4-20.4,20.4-20.4s-0.3,16.6,10.2,30.6s20.4,20.4,20.4,20.4s-53.5,26.5-40.8,61.3c12.7,34.7,51.9,41.1,81.7,40.8s91.9-20.4,91.9-20.4h10.2c0,0,62.1,20.1,91.9,20.4c29.8,0.3,69-6.1,81.7-40.8c12.7-34.7-40.8-61.3-40.8-61.3s9.9-6.4,20.4-20.4c10.6-14,10.2-30.6,10.2-30.6s0.5-1.8,20.4,20.4c19.9,22.2,29.3-2.3,30.6-40.8c1.3-38.5-51-91.9-51-91.9S677.7,468.1,673.5,449L673.5,449z"/>
+        </g>
+    </symbol>
+    <symbol id="douban" viewBox="0 0 256 256">
+        <g id="Background_1_" style="enable-background:new    ;">
+            <g id="Background">
+                <g>
+                    <path d="M249.422,30.68c-2.722-4.986-5.816-9.537-9.794-13.521     c-3.991-3.998-8.708-7.587-13.702-10.314c-8.381-4.576-18.789-6.856-29.002-6.856H59.075c-10.444,0-20.542,2.345-29.265,6.949     c-5.022,2.65-9.588,6.146-13.503,10.126c-3.932,3.998-7.491,8.488-10.046,13.572c-4.289,8.533-6.274,18.478-6.274,28.65v137.43     c0,10.326,1.671,20.678,6.296,29.134c2.68,4.9,6.191,9.861,10.087,13.794c3.934,3.971,8.583,7.226,13.502,9.956     c8.465,4.7,18.842,6.413,29.202,6.413h137.849c10.568,0,20.398-1.523,28.982-6.401c4.739-2.692,9.879-6.113,13.687-9.966     c3.923-3.969,7.2-8.851,9.886-13.798c4.566-8.416,6.533-18.875,6.533-29.132V59.285C256.012,48.978,254.031,39.124,249.422,30.68     z"
+                          style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;"/>
+                </g>
+            </g>
+        </g>
+        <g id="Shape_1_1_" style="enable-background:new    ;">
+            <g id="Shape_1">
+                <g>
+                    <path d="M204.508,49.25H51.492v18.549h153.016V49.25z      M167.393,188.201l9.441-32.541h18.232c0,0,0-49.249,0-73.869H60.933c0,24.62,0,73.869,0,73.869h17.906l9.767,32.541     c0,0-27.783,0-41.673,0v18.549h162.133v-18.549C195.176,188.201,167.393,188.201,167.393,188.201z M84.048,137.111V100.34h87.903     v36.771H84.048z M148.51,187.876h-41.021l-9.767-32.216h60.23L148.51,187.876z"
+                          style="fill-rule:evenodd;clip-rule:evenodd;fill:#228A31;"/>
+                </g>
+            </g>
         </g>
     </symbol>
 </svg>
