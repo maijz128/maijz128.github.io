@@ -4,6 +4,27 @@
  * Github: https://github.com/maijz128
  */
 
+/**
+ * Example
+
+     <ul class="st-nav-tabs">
+         <li>
+            <a class="st-nav-tab" href="javascript:void();"
+            st-target="pane1" st-active="true">Pane1</a>
+         </li>
+         <li>
+            <a class="st-nav-tab" href="javascript:void();"
+            st-target="pane2">Pane2</a>
+         </li>
+     </ul>
+
+    <div id="pane1">
+        pane1 content
+    <div>
+    <div id="pane2">
+        pane2 content
+    <div>
+ */
 
 
 const _NAV_TABS_CLASS_NAME = "st-nav-tabs";
