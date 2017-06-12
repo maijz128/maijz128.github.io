@@ -25,6 +25,19 @@ const LINKS_ID_NAME = {
     QQ: ""
 };
 
+const USER_JSON = {
+    "login": "maijz128",
+    "id": 6248618,
+    "avatar_url": "https://avatars1.githubusercontent.com/u/6248618?v=3",
+    "url": "https://api.github.com/users/maijz128",
+    "html_url": "https://github.com/maijz128",
+    "name": "MaiJZ",
+    "company": "",
+    "blog": "",
+    "location": "ShenZhen / China",
+    "email": "maijz128@gmail.com",
+};
+
 const _g = {};
 
 window.onload = function () {
@@ -111,38 +124,7 @@ function User(configJSON) {
     const self = this;
     self.appData = {
         isShowOrganizations: false,
-        json: {
-            "login": "maijz128",
-            "id": 6248618,
-            "avatar_url": "https://avatars1.githubusercontent.com/u/6248618?v=3",
-            "gravatar_id": "",
-            "url": "https://api.github.com/users/maijz128",
-            "html_url": "https://github.com/maijz128",
-            "followers_url": "https://api.github.com/users/maijz128/followers",
-            "following_url": "https://api.github.com/users/maijz128/following{/other_user}",
-            "gists_url": "https://api.github.com/users/maijz128/gists{/gist_id}",
-            "starred_url": "https://api.github.com/users/maijz128/starred{/owner}{/repo}",
-            "subscriptions_url": "https://api.github.com/users/maijz128/subscriptions",
-            "organizations_url": "https://api.github.com/users/maijz128/orgs",
-            "repos_url": "https://api.github.com/users/maijz128/repos",
-            "events_url": "https://api.github.com/users/maijz128/events{/privacy}",
-            "received_events_url": "https://api.github.com/users/maijz128/received_events",
-            "type": "User",
-            "site_admin": false,
-            "name": "MaiJZ",
-            "company": "test company",
-            "blog": "test blog",
-            "location": "ShenZhen China",
-            "email": "test email",
-            "hireable": null,
-            "bio": "Code Code Code Coding",
-            "public_repos": 7,
-            "public_gists": 0,
-            "followers": 4,
-            "following": 0,
-            "created_at": "2013-12-23T16:44:16Z",
-            "updated_at": "2017-06-09T14:02:45Z"
-        }
+        json: USER_JSON
     };
     self.app = new Vue({
         el: '#user',
@@ -151,7 +133,7 @@ function User(configJSON) {
     });
     const url = URL_USER.replace("{{userName}}", configJSON.userName);
     fetchJSON(url).then(function (json) {
-        self.appData.json = classExtend(self.appData.json, json);
+        self.appData.json = classCombine(self.appData.json, json);
     });
 }
 
