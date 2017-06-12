@@ -18,6 +18,8 @@
 
 
     <script src="html/js/toggle-element.js"></script>
+    <script src="html/js/simple-tabs.js"></script>
+
     <script src="html/js/vue.min.js"></script>
     <script src="html/js/index.js"></script>
 </head>
@@ -48,6 +50,17 @@
                 </svg>
 
             </a>
+
+            <ul class="header-nav float-left st-nav-tabs" role="navigation">
+                <li class="header-nav-item">
+                    <a class="header-nav-link st-nav-tab" href="javascript:void(0);"
+                       st-target="pane-profile" st-active="true">Profile</a>
+                </li>
+                <li class="header-nav-item">
+                    <a class="header-nav-link st-nav-tab" href="javascript:void(0);"
+                       st-target="pane-books" st-active="false">Books</a>
+                </li>
+            </ul>
 
         </div>
     </div>
@@ -131,7 +144,7 @@
             </div>
         </div>
 
-        <div class="col-9 float-left pl-2">
+        <div id="pane-profile" class="col-9 float-left pl-2">
 
             <div class="code-languages">
                 <h2 class="f4 mb-2 text-normal">编程语言</h2>
@@ -197,10 +210,10 @@
                     <h2 class="f4 mb-2 text-normal band">
                         <span class="in-band">{{ pro.title }}</span>
                         <span class="out-of-band">
-                            <span >
+                            <span>
                                <a class="toggle-el-switch" v-bind:te-target="'repos' + proIndex"
                                   v-bind:te-closing="pro.closing"
-                                  href="JavaScript:;" title="toggle list" >
+                                  href="JavaScript:;" title="toggle list">
                                    <span class="inner toggle-el-show-hint">[−]</span>
                                    <span class="inner toggle-el-hide-hint">[+]</span>
                                </a>
@@ -262,6 +275,11 @@
             </div>
 
         </div>
+
+        <div id="pane-books" class="col-9 float-left pl-2">
+                books
+        </div>
+
     </div>
 </div>
 
