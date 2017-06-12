@@ -1,4 +1,26 @@
 
+
+
+.books-category .band{
+    position: relative;
+    border-bottom: 1px dashed;
+    border-bottom-color: #D5D5D5;
+}
+.books-category .in-band {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+.books-category .out-of-band {
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    display: inline-block;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+}
+
 .pinned-books-list {
     display: -webkit-box;
     display: -webkit-flex;

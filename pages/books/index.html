@@ -4,177 +4,44 @@
     <meta charset="UTF-8">
     <meta content="origin-when-cross-origin" name="referrer"/>
     <meta name="viewport" content="width=device-width">
+    <title>Books - MaiJZ</title>
 
-    <title>MaiJZ</title>
+    <link rel="fluid-icon" href="/html/img/fluidicon.jpg" title="MaiJZ">
+    <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
 
-    <link rel="fluid-icon" href="html/img/fluidicon.jpg" title="MaiJZ">
-    <link rel="icon" type="image/x-icon" href="html/img/favicon.ico">
+    <link rel="stylesheet" href="/html/css/base.css">
+    <link rel="stylesheet" href="/html/css/github-frameworks.css">
 
-    <link rel="stylesheet" href="html/css/base.css">
-    <link rel="stylesheet" href="html/css/github-frameworks.css">
-    <link rel="stylesheet" href="html/css/index.css">
-    <link rel="stylesheet" href="html/css/pinned-repo-item.css">
 
-    <script src="html/js/toggle-element.js"></script>
-    <script src="html/js/simple-tabs.js"></script>
+    <link rel="stylesheet" href="pinned-book-item.css">
+    <link rel="stylesheet" href="index.css">
 
-    <script src="html/js/vue.min.js"></script>
-    <script src="html/js/index.js"></script>
+
+    <script src="/html/js/vue.min.js"></script>
+    <script src="/html/js/toggle-element.js"></script>
+    <script src="/html/js/simple-tabs.js"></script>
+
+    <script src="index.js"></script>
+
 </head>
 <body>
-
 <div class="position-relative ">
     <iframe src="/pages/_header/index.html" width="100%" height="55" marginwidth="0" frameborder="no" scrolling="no"></iframe>
 </div>
 <div role="main">
-    <div id="pane-profile" class="container-lg clearfix px-3 mt-4">
-
-        <div class="h-card col-3 float-left pr-3">
-            <div id="user">
-                <a v-bind:href="json.html_url" class="u-photo d-block ">
-                    <img class="avatar width-full rounded-2" height="230"
-                         v-bind:src="json.avatar_url" width="230"></a>
-
-                <div class="vcard-names-container py-3 "
-                     style="position: static;">
-                    <h1 class="vcard-names">
-                        <span class="p-name vcard-fullname d-block">{{json.name}}</span>
-                        <span class="p-nickname vcard-username d-block">{{json.login}}</span>
-                    </h1>
-                </div>
-
-                <div class="p-note user-profile-bio">
-                    <div>{{ json.bio }}</div>
-                </div>
-
-
-                <ul class="vcard-details border-top border-gray-light py-3">
-
-                    <li aria-label="Organization" class="vcard-detail pt-1 css-truncate css-truncate-target"
-                        itemprop="worksFor" show_title="false"
-                        v-show="json.company">
-                        <svg aria-hidden="true" class="octicon octicon-organization" height="16" version="1.1"
-                             viewBox="0 0 16 16" width="16">
-                            <path fill-rule="evenodd"
-                                  d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4"></path>
-                        </svg>
-                        <span class="p-org"><div>{{ json.company }}</div></span>
-                    </li>
-
-                    <li aria-label="Home location" class="vcard-detail pt-1 css-truncate css-truncate-target"
-                        v-show="json.location">
-                        <svg aria-hidden="true" class="octicon octicon-location" height="16" version="1.1"
-                             viewBox="0 0 12 16" width="12">
-                            <path fill-rule="evenodd"
-                                  d="M6 0C2.69 0 0 2.5 0 5.5 0 10.02 6 16 6 16s6-5.98 6-10.5C12 2.5 9.31 0 6 0zm0 14.55C4.14 12.52 1 8.44 1 5.5 1 3.02 3.25 1 6 1c1.34 0 2.61.48 3.56 1.36.92.86 1.44 1.97 1.44 3.14 0 2.94-3.14 7.02-5 9.05zM8 5.5c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path>
-                        </svg>
-                        <span class="p-label">{{ json.location }}</span>
-                    </li>
-
-                    <li aria-label="Email" class="vcard-detail pt-1 css-truncate css-truncate-target" itemprop="email"
-                        v-show="json.email">
-                        <svg aria-hidden="true" class="octicon octicon-mail" height="16" version="1.1"
-                             viewBox="0 0 14 16" width="14">
-                            <use xlink:href="#svg-email"></use>
-                        </svg>
-                        <a class="u-email" v-bind:href="'mailto:' + json.email">{{ json.email }}</a>
-                    </li>
-
-                    <li aria-label="Blog or website" class="vcard-detail pt-1 css-truncate css-truncate-target"
-                        itemprop="url"
-                        v-show="json.blog">
-                        <svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1"
-                             viewBox="0 0 16 16" width="16">
-                            <path fill-rule="evenodd"
-                                  d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
-                        </svg>
-                        <a v-bind:href="json.blog" class="u-url" rel="nofollow me">{{ json.blog }}</a>
-                    </li>
-                </ul>
-
-
-                <div class="border-top py-3 clearfix"
-                     v-show="isShowOrganizations">
-                    <h2 class="mb-1 h4">Organizations</h2>
-
-                    <a href="/MakomoProject" aria-label="MakomoProject"
-                       class="tooltipped tooltipped-n avatar-group-item">
-                        <img alt="@MakomoProject" class="avatar" height="35"
-                             src="https://avatars3.githubusercontent.com/u/23189528?v=3&amp;s=70"
-                             width="35"></a>
-                </div>
-            </div>
-        </div>
+    <div class="container-lg clearfix px-3 mt-4">
+        <div class="h-card col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
+            <div id="books-container">
 
-            <div class="code-languages">
-                <h2 class="f4 mb-2 text-normal">编程语言</h2>
-                <table border="1" cellpadding="10">
-                    <thead>
-                    <tr>
-                        <th>Language</th>
-                        <th>使用频率</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>JavaScript</td>
-                        <td>
-                            <div class="use-rate-3"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Python</td>
-                        <td>
-                            <div class="use-rate-2"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>C#</td>
-                        <td>
-                            <div class="use-rate-2"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Java</td>
-                        <td>
-                            <div class="use-rate-1"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>C</td>
-                        <td>
-                            <div class="use-rate-0"></div>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-
-                <div class="use-rate-legend">
-                    Less
-                    <ul>
-                        <li class="use-rate-0"></li>
-                        <li class="use-rate-1"></li>
-                        <li class="use-rate-2"></li>
-                        <li class="use-rate-3"></li>
-                        <li class="use-rate-4"></li>
-                    </ul>
-                    More
-                </div>
-            </div>
-
-
-            <div id="projects">
-
-                <div v-for="(pro, proIndex) in projects">
-
+                <div class="books-category" v-for="(categoryObj,  categoryIndex) in json">
                     <h2 class="f4 mb-2 text-normal band">
-                        <span class="in-band">{{ pro.title }}</span>
+                        <span class="in-band">{{ categoryObj.category }}</span>
                         <span class="out-of-band">
                             <span>
-                               <a class="toggle-el-switch" v-bind:te-target="'repos' + proIndex"
-                                  v-bind:te-closing="pro.closing"
+                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
+                                  v-bind:te-closing="categoryObj.closing"
                                   href="JavaScript:;" title="toggle list">
                                    <span class="inner toggle-el-show-hint">[−]</span>
                                    <span class="inner toggle-el-hide-hint">[+]</span>
@@ -183,70 +50,43 @@
                         </span>
                     </h2>
 
-                    <ol class="pinned-repos-list" v-bind:id="'repos' + proIndex">
+                    <ol class="pinned-books-list" v-bind:id="'category' + categoryIndex">
 
-                        <li class="pinned-repo-item" v-for="repo in getRepos(pro.repos)">
-                            <div class="pinned-repo-item-content">
+                        <li class="pinned-book-item" v-for="book in categoryObj.books">
+                            <div class="pinned-book-item-content">
                                 <span class="d-block position-relative">
-                                    <span class="pinned-repository-handle float-left pr-2"
-                                          title="HomePage">
-                                        <a class="home" v-show="repo.homepage" v-bind:href="repo.homepage"></a>
-                                    </span>
-                                    <a v-bind:href="repo.html_url" class="text-bold">
-                                        <span class="repo " v-bind:title="repo.name">{{ repo.name}}</span>
+                                    <a v-bind:href="book.links.douban || 'javascript:void(0);'" class="text-bold">
+                                        <span v-bind:title="book.name">{{ book.name }}</span>
                                     </a>
                                 </span>
 
-                                <p class="pinned-repo-desc text-gray text-small d-block mt-2 mb-3">
-                                    {{ repo.description }}</p>
+                                <p class="name-original">
+                                    {{ book.name_original }}
+                                </p>
+                                <p class="pinned-desc text-gray text-small d-block mt-2 mb-3">
+                                    {{ book.bio }}</p>
 
                                 <p class="mb-0 f6 text-gray">
-                                    <span class="repo-language-color pinned-repo-meta"
-                                          v-bind:style="getLanguageColor(repo)"
-                                          v-show="repo.language"></span>
-                                    {{ repo.language }}
+                                    PViews: {{ book.pviews }}
 
-                                    <a v-bind:href="repo.html_url + '/stargazers'" class="pinned-repo-meta muted-link"
-                                       v-show="repo.stargazers_count > 0">
-                                        <svg aria-label="stars" class="octicon octicon-star" height="16" role="img"
-                                             version="1.1" viewBox="0 0 14 16" width="14">
-                                            <path fill-rule="evenodd"
-                                                  d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"></path>
+                                    <a class="pinned-meta muted-link" title="douban"
+                                       v-bind:href="book.links.douban"
+                                       v-show="book.links.douban">
+                                        <svg class="octicon " height="16" role="img"
+                                             version="1.1" viewBox="0 0 16 16" width="16">
+                                            <use xlink:href="#svg-douban"></use>
                                         </svg>
-                                        {{ repo.stargazers_count }}
                                     </a>
 
-                                    <a v-bind:href="repo.html_url + '/network/members'"
-                                       class="pinned-repo-meta muted-link"
-                                       v-show="repo.forks_count > 0">
-                                        <svg aria-label="fork" class="octicon octicon-repo-forked" height="16"
-                                             role="img"
-                                             version="1.1" viewBox="0 0 10 16" width="10">
-                                            <path fill-rule="evenodd"
-                                                  d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path>
-                                        </svg>
-                                        {{ repo.forks_count }}
-                                    </a>
                                 </p>
                             </div>
                         </li>
-
                     </ol>
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
-
-    <div id="pane-self-improvement" class="container-lg clearfix px-3 mt-4">
-        程序员的自我修养
-    </div>
-
 </div>
-
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 
@@ -364,7 +204,7 @@
             <path d="M500,990C229.4,990,10,770.6,10,500S229.4,10,500,10s490,219.4,490,490S770.6,990,500,990L500,990z M673.5,449c-4.1-19.2-10.2-30.6-10.2-30.6s0.3-28.1-30.6-91.9C601.8,262.7,510.2,255,510.2,255H500c0,0-91.6,7.7-122.5,71.5c-30.9,63.8-30.6,91.9-30.6,91.9s-6.1,11.5-10.2,30.6c-4.1,19.2,0,30.6,0,30.6s-52.3,53.4-51,91.9c1.3,38.5,10.7,63,30.6,40.8c19.9-22.2,20.4-20.4,20.4-20.4s-0.3,16.6,10.2,30.6s20.4,20.4,20.4,20.4s-53.5,26.5-40.8,61.3c12.7,34.7,51.9,41.1,81.7,40.8s91.9-20.4,91.9-20.4h10.2c0,0,62.1,20.1,91.9,20.4c29.8,0.3,69-6.1,81.7-40.8c12.7-34.7-40.8-61.3-40.8-61.3s9.9-6.4,20.4-20.4c10.6-14,10.2-30.6,10.2-30.6s0.5-1.8,20.4,20.4c19.9,22.2,29.3-2.3,30.6-40.8c1.3-38.5-51-91.9-51-91.9S677.7,468.1,673.5,449L673.5,449z"/>
         </g>
     </symbol>
-    <symbol id="douban" viewBox="0 0 256 256">
+    <symbol id="svg-douban" viewBox="0 0 256 256">
         <g id="Background_1_" style="enable-background:new    ;">
             <g id="Background">
                 <g>
