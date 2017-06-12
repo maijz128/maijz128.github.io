@@ -101,3 +101,23 @@ body {
 .code-languages table td div{
     height: 20px;
 }
+
+.band{
+    position: relative;
+    border-bottom: 1px dashed;
+    border-bottom-color: #D5D5D5;
+}
+.in-band {
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+.out-of-band {
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    display: inline-block;
+    font-weight: normal;
+    position: absolute;
+    right: 0;
+}

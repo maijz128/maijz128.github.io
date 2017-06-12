@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="html/css/pinned-repo-item.css">
 
 
+    <script src="html/js/toggle-element.js"></script>
     <script src="html/js/vue.min.js"></script>
     <script src="html/js/index.js"></script>
 </head>
@@ -40,7 +41,7 @@
                 </svg>
             </a>
             <a aria-label="Twitter" class="header-logo-invertocat"
-               v-bind:href="'mailto:' + LINKS.Email" >
+               v-bind:href="'mailto:' + LINKS.Email">
                 <svg aria-hidden="true" class="octicon" height="32" version="1.1"
                      viewBox="0 0 16 16" width="32">
                     <use xlink:href="#svg-email"/>
@@ -100,7 +101,7 @@
                         <svg aria-hidden="true" class="octicon octicon-mail" height="16" version="1.1"
                              viewBox="0 0 14 16" width="14">
                             <use xlink:href="#svg-email"></use>
-                         </svg>
+                        </svg>
                         <a class="u-email" v-bind:href="'mailto:' + json.email">{{ json.email }}</a>
                     </li>
 
@@ -191,9 +192,23 @@
 
             <div id="projects">
 
-                <div v-for="pro in projects">
-                    <h2 class="f4 mb-2 text-normal">{{ pro.title }}</h2>
-                    <ol class="pinned-repos-list">
+                <div v-for="(pro, proIndex) in projects">
+
+                    <h2 class="f4 mb-2 text-normal band">
+                        <span class="in-band">{{ pro.title }}</span>
+                        <span class="out-of-band">
+                            <span >
+                               <a class="toggle-el-switch" v-bind:te-target="'repos' + proIndex"
+                                  v-bind:te-closing="pro.closing"
+                                  href="JavaScript:;" title="toggle list" >
+                                   <span class="inner toggle-el-show-hint">[−]</span>
+                                   <span class="inner toggle-el-hide-hint">[+]</span>
+                               </a>
+                            </span>
+                        </span>
+                    </h2>
+
+                    <ol class="pinned-repos-list" v-bind:id="'repos' + proIndex">
 
                         <li class="pinned-repo-item" v-for="repo in getRepos(pro.repos)">
                             <div class="pinned-repo-item-content">
@@ -253,7 +268,7 @@
 
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 
-    <symbol id="svg-email"  viewBox="0 0 14 16" >
+    <symbol id="svg-email" viewBox="0 0 14 16">
         <g>
             <path fill-rule="evenodd"
                   d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path>
@@ -363,7 +378,7 @@
         </g>
     </symbol>
     <symbol id="tencent-qq" viewBox="0 0 1000 1000">
-        <g >
+        <g>
             <path d="M500,990C229.4,990,10,770.6,10,500S229.4,10,500,10s490,219.4,490,490S770.6,990,500,990L500,990z M673.5,449c-4.1-19.2-10.2-30.6-10.2-30.6s0.3-28.1-30.6-91.9C601.8,262.7,510.2,255,510.2,255H500c0,0-91.6,7.7-122.5,71.5c-30.9,63.8-30.6,91.9-30.6,91.9s-6.1,11.5-10.2,30.6c-4.1,19.2,0,30.6,0,30.6s-52.3,53.4-51,91.9c1.3,38.5,10.7,63,30.6,40.8c19.9-22.2,20.4-20.4,20.4-20.4s-0.3,16.6,10.2,30.6s20.4,20.4,20.4,20.4s-53.5,26.5-40.8,61.3c12.7,34.7,51.9,41.1,81.7,40.8s91.9-20.4,91.9-20.4h10.2c0,0,62.1,20.1,91.9,20.4c29.8,0.3,69-6.1,81.7-40.8c12.7-34.7-40.8-61.3-40.8-61.3s9.9-6.4,20.4-20.4c10.6-14,10.2-30.6,10.2-30.6s0.5-1.8,20.4,20.4c19.9,22.2,29.3-2.3,30.6-40.8c1.3-38.5-51-91.9-51-91.9S677.7,468.1,673.5,449L673.5,449z"/>
         </g>
     </symbol>
