@@ -55,7 +55,7 @@
                         <li class="pinned-book-item" v-for="book in categoryObj.books">
                             <div class="pinned-book-item-content">
                                 <span class="d-block position-relative">
-                                    <a v-bind:href="book.links.douban || 'javascript:void(0);'" class="text-bold">
+                                    <a v-bind:href="getDoubanURL(book)" class="text-bold">
                                         <span v-bind:title="book.name">{{ book.name }}</span>
                                     </a>
                                 </span>
@@ -70,7 +70,7 @@
                                     PViews: {{ book.pviews }}
 
                                     <a class="pinned-meta muted-link" title="douban"
-                                       v-bind:href="book.links.douban"
+                                       v-bind:href="getDoubanURL(book)"
                                        v-show="book.links.douban">
                                         <svg class="octicon " height="16" role="img"
                                              version="1.1" viewBox="0 0 16 16" width="16">

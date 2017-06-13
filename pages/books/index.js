@@ -34,7 +34,15 @@ function Books() {
     self.app = new Vue({
         el: '#books-container',
         data: self.appData,
-        methods: {}
+        methods: {
+            getDoubanURL: function (book) {
+                if (book.links.douban) {
+                    return "https://book.douban.com/subject/" + book.links.douban;
+                } else {
+                    return "javascript:void(0);";
+                }
+            }
+        }
     });
 
 
