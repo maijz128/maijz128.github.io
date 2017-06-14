@@ -33,21 +33,14 @@ const USER_JSON = {
 
 const _g = {};
 
-window.onload = function () {
+document.ready(function () {
     _g.languageColors = new LanguageColors();
 
     fetchJSON(URL_CONFIG).then(function (json) {
         _g.projects = new Projects(json, _g.languageColors);
         _g.user = new User(json);
     });
-};
-
-
-function fetchJSON(url) {
-    return fetch(url).then(function (response) {
-        return response.json();
-    });
-}
+});
 
 function LanguageColors() {
     const self = this;
@@ -127,20 +120,4 @@ function User(configJSON) {
     fetchJSON(url).then(function (json) {
         self.appData.json = classCombine(self.appData.json, json);
     });
-}
-
-
-function classExtend(source, target) {
-    var self = source;
-    for (var att in target) {
-        self[att] = target[att];
-    }
-    return source;
-}
-function classCombine(source, target) {
-    var self = source;
-    for (var att in target) {
-        self[att] = target[att] || self[att];
-    }
-    return source;
 }
