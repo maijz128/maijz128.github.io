@@ -4,6 +4,8 @@ body {
     word-wrap: break-word;
 }
 
+h1, h2{font-weight: 600 !important;}
+
 .vcard-detail .octicon {
     color: #6a737d;
 }
@@ -48,6 +50,11 @@ body {
     font-size: 14px;
     color: #6a737d;
 }
+.octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
 
 .vcard-details {
     list-style: none;
@@ -56,14 +63,17 @@ body {
     width: 100%;
     max-width: 100%;
 }
+
 .vcard-detail .octicon {
     float: left;
     width: 16px;
     margin-top: 3px;
-    /*margin-left: -24px;*/
     margin-right: 5px;
     color: #6a737d;
     text-align: center;
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
 }
 
 

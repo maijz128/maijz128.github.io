@@ -2,15 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="origin-when-cross-origin" name="referrer"/>
     <meta name="viewport" content="width=device-width">
     <title>Books - MaiJZ</title>
 
     <link rel="fluid-icon" href="/html/img/fluidicon.jpg" title="MaiJZ">
     <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
 
-    <link rel="stylesheet" href="/html/css/base.css">
-    <link rel="stylesheet" href="/html/css/github-frameworks.css">
+    <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
 
 
     <link rel="stylesheet" href="pinned-book-item.css">
@@ -30,13 +28,13 @@
 </div>
 <div role="main">
     <div class="container-lg clearfix px-3 mt-4">
-        <div class="h-card col-3 float-left pr-3"></div>
+        <div class="col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
             <div id="books-container">
 
                 <div class="books-category" v-for="(categoryObj,  categoryIndex) in json">
-                    <h2 class="f4 mb-2 text-normal band">
+                    <h3 class="f4 mb-2 text-normal band">
                         <span class="in-band">{{ categoryObj.category }}</span>
                         <span class="out-of-band">
                             <span>
@@ -48,7 +46,7 @@
                                </a>
                             </span>
                         </span>
-                    </h2>
+                    </h3>
 
                     <ol class="pinned-books-list" v-bind:id="'category' + categoryIndex">
 
@@ -69,10 +67,10 @@
                                 <p class="mb-0 f6 text-gray">
                                     PViews: {{ book.pviews }}
 
-                                    <a class="pinned-meta muted-link" title="douban"
+                                    <a  title="douban" class="pinned-meta muted-link"
                                        v-bind:href="getDoubanURL(book)"
                                        v-show="book.links.douban">
-                                        <svg class="octicon " height="16" role="img"
+                                        <svg class="octicon" height="16" role="img"
                                              version="1.1" viewBox="0 0 16 16" width="16">
                                             <use xlink:href="#svg-douban"></use>
                                         </svg>

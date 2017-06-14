@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta content="origin-when-cross-origin" name="referrer"/>
     <meta name="viewport" content="width=device-width">
 
     <title>MaiJZ</title>
@@ -10,10 +9,11 @@
     <link rel="fluid-icon" href="html/img/fluidicon.jpg" title="MaiJZ">
     <link rel="icon" type="image/x-icon" href="html/img/favicon.ico">
 
-    <link rel="stylesheet" href="html/css/base.css">
-    <link rel="stylesheet" href="html/css/github-frameworks.css">
-    <link rel="stylesheet" href="html/css/index.css">
+    <link rel="stylesheet" href="html/css/maijz-frameworks.css">
+
+
     <link rel="stylesheet" href="html/css/pinned-repo-item.css">
+    <link rel="stylesheet" href="html/css/index.css">
 
     <script src="html/js/toggle-element.js"></script>
     <script src="html/js/simple-tabs.js"></script>
@@ -30,7 +30,7 @@
 <div role="main">
     <div id="pane-profile" class="container-lg clearfix px-3 mt-4">
 
-        <div class="h-card col-3 float-left pr-3">
+        <div class="col-3 float-left pr-3">
             <div id="user">
                 <a v-bind:href="json.html_url" class="u-photo d-block ">
                     <img class="avatar width-full rounded-2" height="230"
@@ -110,7 +110,7 @@
         <div class="col-9 float-left pl-2">
 
             <div class="code-languages">
-                <h2 class="f4 mb-2 text-normal">编程语言</h2>
+                <h3 class="f4 mb-2 text-normal">编程语言</h3>
                 <table border="1" cellpadding="10">
                     <thead>
                     <tr>
@@ -170,7 +170,7 @@
 
                 <div v-for="(pro, proIndex) in projects">
 
-                    <h2 class="f4 mb-2 text-normal band">
+                    <h3 class="f4 mb-2 text-normal band">
                         <span class="in-band">{{ pro.title }}</span>
                         <span class="out-of-band">
                             <span>
@@ -182,7 +182,7 @@
                                </a>
                             </span>
                         </span>
-                    </h2>
+                    </h3>
 
                     <ol class="pinned-repos-list" v-bind:id="'repos' + proIndex">
 

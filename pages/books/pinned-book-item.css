@@ -149,3 +149,10 @@
     -webkit-flex: 1 0 auto;
     flex: 1 0 auto;
 }
+
+
+.pinned-book-item-content .octicon {
+    display: inline-block;
+    vertical-align: text-top;
+    fill: currentColor;
+}
