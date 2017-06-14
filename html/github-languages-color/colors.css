@@ -1,0 +1,35 @@
+.use-rate-0{  background-color: #eee;  }
+.use-rate-1{  background-color: #c6e48b;  }
+.use-rate-2{  background-color: #7bc96f;  }
+.use-rate-3{  background-color: #239a3b;  }
+.use-rate-4{  background-color: #196127; }
+
+.use-rate-legend{
+    color: #586069 !important;
+    font-size: 11px;
+}
+.use-rate-legend ul{
+    position: relative;
+    bottom: -1px;
+    display: inline-block;
+    margin: 0 5px;
+    list-style: none;
+}
+.use-rate-legend li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.code-languages{
+    color: #586069 !important;
+    margin-bottom: 16px;
+}
+.code-languages table{
+    border: 1px #ddd solid !important;
+}
+.code-languages table td,.code-languages table th {
+    padding: 4px 6px;
+}
+.code-languages table td div{
+    height: 20px;
+}

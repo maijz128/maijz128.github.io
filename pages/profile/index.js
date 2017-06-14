@@ -12,10 +12,8 @@ const URL_USER = "https://api.github.com/users/{{userName}}";
 const URL_USER_REPOS = "https://api.github.com/users/{{userName}}/repos";
 
 
-const URL_CONFIG = "config.json";
+const URL_CONFIG = "/pages/profile/profile.json";
 
-// 引用 https://github.com/ozh/github-colors
-const URL_COLORS = "html/github-languages-color/colors.json";
 
 
 const USER_JSON = {
@@ -41,23 +39,6 @@ document.ready(function () {
         _g.user = new User(json);
     });
 });
-
-function LanguageColors() {
-    const self = this;
-    self.colors = {};
-
-    fetchJSON(URL_COLORS).then(function (json) {
-        self.colors = json;
-    });
-}
-LanguageColors.prototype.getColor = function (languageName) {
-    var color = "";
-    const lColor = this.colors[languageName];
-    if (lColor) {
-        color = lColor.color;
-    }
-    return color;
-};
 
 
 function Projects(configJSON, languageColors) {
