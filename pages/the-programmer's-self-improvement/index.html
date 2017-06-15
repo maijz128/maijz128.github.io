@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="index.css">
 
+    <script src="/html/js/tool.js"></script>
     <script src="/html/js/vue.min.js"></script>
     <script src="/html/js/toggle-element.js"></script>
     <script src="/html/js/simple-tabs.js"></script>
@@ -23,8 +24,7 @@
 </head>
 <body>
 <div class="position-relative ">
-    <iframe src="/pages/header/index.html" width="100%" height="55" marginwidth="0" frameborder="no"
-            scrolling="no"></iframe>
+    <div id="header-content"></div>
 </div>
 
 <div role="main">
@@ -37,5 +37,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    htmlLoader("/pages/header/index.html", "#header-content");
+</script>
 </body>
 </html>

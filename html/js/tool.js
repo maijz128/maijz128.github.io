@@ -47,3 +47,23 @@ function fetchJSON(url) {
         return response.json();
     });
 }
+
+function fetchHtml(url) {
+    return fetch(url).then(function (response) {
+        return response.text()
+    }).then(function (text) {
+        return text;
+    }).catch(function (err) {
+        console.error(err)
+    });
+}
+
+// htmlLoader("/pages/header/index.html", "#header-content");
+function htmlLoader(url, containerSelector) {
+    fetchHtml(url).then(function (html) {
+        var container = document.querySelector(containerSelector);
+        if (container) {
+            container.innerHTML = html;
+        }
+    });
+}

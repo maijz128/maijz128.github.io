@@ -1,35 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>_Header - MaiJZ</title>
 
-    <link rel="stylesheet" href="index.css">
 
-    <script src="/html/js/vue.min.js"></script>
+<div class="header-body">
+    <link rel="stylesheet" href="/pages/header/index.css">
 
-    <script src="index.js"></script>
-
-</head>
-<body class="header-body">
 <div id="header" class="header" role="banner">
     <div class="container clearfix">
         <a aria-label="GitHub" class="header-logo-invertocat" target="_top"
-           v-bind:href="'https://github.com/' + LINKS.GitHub">
+           href="https://github.com/maijz128">
             <svg aria-hidden="true" class="octicon" height="32" version="1.1"
                  viewBox="0 0 16 16" width="32">
                 <use xlink:href="#svg-github"/>
             </svg>
         </a>
         <a aria-label="Twitter" class="header-logo-invertocat" target="_top"
-           v-bind:href="'https://twitter.com/' + LINKS.Twitter">
+           href="https://twitter.com/maijz128">
             <svg aria-hidden="true" class="octicon" height="32" version="1.1"
                  viewBox="0 0 16 16" width="32">
                 <use xlink:href="#svg-twitter"/>
             </svg>
         </a>
         <a aria-label="Email" class="header-logo-invertocat" target="_top"
-           v-bind:href="'mailto:' + LINKS.Email">
+           href="mailto:maijz128@gmail.com">
             <svg aria-hidden="true" class="octicon" height="32" version="1.1"
                  viewBox="0 0 16 16" width="32">
                 <use xlink:href="#svg-email"/>
@@ -46,6 +37,22 @@
             </li>
             <li class="header-nav-item">
                 <a class="header-nav-link" href="/pages/the-programmer's-self-improvement/" target="_top">程序员的自我修养</a>
+            </li>
+
+            <li class="header-nav-item dropdown  nav-item">
+                <a class="header-nav-link" href="javascript:void(0);">More</a>
+
+                <div class="dropdown-menu-content sub-items dropdown-menu-sw">
+                    <div class="dropdown-menu dropdown-menu-sw">
+                        <!--<div class="dropdown-divider"></div>-->
+
+                        <a class="dropdown-item" href="/pages/movie/">
+                            Movie
+                        </a>
+
+                        <!--<div class="dropdown-divider"></div>-->
+                    </div>
+                </div>
             </li>
         </ul>
 
@@ -156,5 +163,4 @@
     </symbol>
 </svg>
 
-</body>
-</html>
+</div>
