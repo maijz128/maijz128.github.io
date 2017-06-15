@@ -32,6 +32,13 @@ body {
     right: 0;
 }
 
+.pinned-movie-item{padding: 2px 0}
+.pinned-movie-item:hover{
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
 .movie-name{color: #586069 !important;}
 .movie-name:hover{  color: #9E0000 !important;}
 
