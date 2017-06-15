@@ -286,17 +286,208 @@
     ]
   },
   {
+    "category": "粤语",
+    "closing": true,
+    "movies": [
+      {
+        "name": "2015香港惊悚剧情《陀地驱魔人》BD720P.国粤双语.高清中字",
+        "IMDb": "tt5157030",
+        "Douban": "26341750",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3N07XYx/3Ep8jLLktlZXBlci5vZi5EYXJrbmVzcy4yMDE1LkJENzIwUC65+tTBy6vT7y6438fl1tDX1i5tcDR8MjQzNjYxNDA2MHxCREMzMjA2ODY3NUREN0U0NDI3NzI3QjY4OEI1RDU4QnxoPUFENEpTQ1FTUjU3VUxFNzRVQVJBSTZUTUNEQlpaSDNKfC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dzdO12Mf9xKfIyy5LZWVwZXIub2YuRGFya25lc3MuMjAxNS5CRDcyMFAuufrUwcur0+8uuN/H5dbQ19YubXA0fDI0MzY2MTQwNjB8QkRDMzIwNjg2NzVERDdFNDQyNzcyN0I2ODhCNUQ1OEJ8aD1BRDRKU0NRU1I1N1VMRTc0VUFSQUk2VE1DREJaWkgzSnwv"
+        }
+      },
+      {
+        "name": "1991喜剧爱情《与龙共舞》BD720P.国粤双语.中字",
+        "IMDb": "tt0103314",
+        "Douban": "1307862",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3T68H6ubLO6C5CRDcyMFAuufrUwcur0+8u1tDX1i5ta3Z8MjY4NTg2ODk4OXwwN0NGODAyQUNEMjI3QkFBMTQyNjAwQTc5RTJCODNGNXxoPU5ZNlVTWTJGM1RCUTVVVFlMMk5BVUlFTktZTVU1U1I0fC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21d0+vB+rmyzuguQkQ3MjBQLrn61MHLq9PvLtbQ19YubWt2fDI2ODU4Njg5ODl8MDdDRjgwMkFDRDIyN0JBQTE0MjYwMEE3OUUyQjgzRjV8aD1OWTZVU1kyRjNUQlE1VVRZTDJOQVVJRU5LWU1VNVNSNHwv"
+        }
+      },
+      {
+        "name": "1994香港家庭喜剧《大富之家》1080P",
+        "IMDb": "tt0109524",
+        "Douban": "1296897",
+        "links": {
+          "ed2k": "ed2k://|file|大富之家.It.s.a.Wonderful.Life.1994.WEB-DL.1080P.2aac.H264.8Bit.2Sup.mkv|4138265884|BFC31F341355B24195E3942B1E6A2EF5|h=HR5GHKC3HHTAH7NYUXWOXAMFM4XFYYMY|/",
+          "magnet": "",
+          "thunder": "",
+          "qqdl": ""
+        }
+      },
+      {
+        "name": "1995张国荣高分喜剧爱情《金玉满堂/满汉全席》BD720P.原音.中字",
+        "IMDb": "tt0113475",
+        "Douban": "1295374",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV298NPxwvrMwy5KaW4uWXUuTWFuLlRhbmcuMTk5NS5CRDcyMFAu1K3J+S7W0NfWLm1rdnwxNzExODc2NzQ4fEQxNzQ0REQwQkRFOTEyNUM5ODBGMjlCMTg4MTAyOEQxfGg9UDNPUEtYSUZLV0NCWFhJWlJPWldISDJNVVZRVVdBWU18L1pa",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dvfDT8cL6zMMuSmluLll1Lk1hbi5UYW5nLjE5OTUuQkQ3MjBQLtStyfku1tDX1i5ta3Z8MTcxMTg3Njc0OHxEMTc0NEREMEJERTkxMjVDOTgwRjI5QjE4ODEwMjhEMXxoPVAzT1BLWElGS1dDQlhYSVpST1pXSEgyTVVWUVVXQVlNfC8="
+        }
+      }
+    ]
+  },
+  {
+    "category": "外语",
+    "closing": true,
+    "movies": [
+      {
+        "name": "1985科幻喜剧《回到未来》BD720p.国英双语.高清中英双字",
+        "IMDb": "tt0088763",
+        "Douban": "1300555",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV272LW9zrTAtDEuQmFjay5Uby5UaGUuRnV0dXJlLkJENzIwUC65+tOiy6vT7y6438fl1tDX1i5ta3Z8MjkzNjU0MjM0MnxBMzA5MjQwRkE3NTZFMTZCMUYxNkE0RTJCQzQ0MDc4NnxoPVVLRks1VDJOWDJKQ0hWQTRPQ1NGTVNZNVNQTllZWUQ3fC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21du9i1vc60wLQxLkJhY2suVG8uVGhlLkZ1dHVyZS5CRDcyMFAuufrTosur0+8uuN/H5dbQ19YubWt2fDI5MzY1NDIzNDJ8QTMwOTI0MEZBNzU2RTE2QjFGMTZBNEUyQkM0NDA3ODZ8aD1VS0ZLNVQyTlgySkNIVkE0T0NTRk1TWTVTUE5ZWVlEN3wv"
+        }
+      },
+      {
+        "name": "1989科幻喜剧《回到未来2》BD720p.国英双语.高清中英双字",
+        "IMDb": "tt0096874",
+        "Douban": "1299092",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV272LW9zrTAtDIuQmFjay5Uby5UaGUuRnV0dXJlLklJLkJENzIwUC65+tOiy6vT7y6438fl1tDX1i5ta3Z8MjkzNTc1NDY1NHw2Q0Q2OTBEMzA0OEExNDlDNDkzOTcyOTJGQkUyMzdDNXxoPUtNR1RHQVY2U1VTVjZHSEVGQVVSU1hOR0oyNzMyRzdZfC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21du9i1vc60wLQyLkJhY2suVG8uVGhlLkZ1dHVyZS5JSS5CRDcyMFAuufrTosur0+8uuN/H5dbQ19YubWt2fDI5MzU3NTQ2NTR8NkNENjkwRDMwNDhBMTQ5QzQ5Mzk3MjkyRkJFMjM3QzV8aD1LTUdUR0FWNlNVU1Y2R0hFRkFVUlNYTkdKMjczMkc3WXwv"
+        }
+      },
+      {
+        "name": "1990科幻喜剧《回到未来3》BD720p.国英双语.高清中英双字",
+        "IMDb": "tt0099088",
+        "Douban": "1296666",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV272LW9zrTAtDMuQmFjay5Uby5UaGUuRnV0dXJlLklJSS5CRDcyMFAuufrTosur0+8uuN/H5dbQ19YubWt2fDI5MzU3MjUyNjd8NkNEQkNBQzNGNTA3OEZFMzAzMDVFNzYwQjlEQTA5QkZ8aD1RNjNFUk9ONEZCS01OR0o0Q1hEQVVMVTNDSVlZTjNSRnwvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21du9i1vc60wLQzLkJhY2suVG8uVGhlLkZ1dHVyZS5JSUkuQkQ3MjBQLrn606LLq9PvLrjfx+XW0NfWLm1rdnwyOTM1NzI1MjY3fDZDREJDQUMzRjUwNzhGRTMwMzA1RTc2MEI5REEwOUJGfGg9UTYzRVJPTjRGQktNTkdKNENYREFVTFUzQ0lZWU4zUkZ8Lw=="
+        }
+      },
+      {
+        "name": "1999高分动作悬疑《搏击俱乐部》BD720P.国英双语.高清中英双字",
+        "IMDb": "tt0137523",
+        "Douban": "1292000",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV2yq7v3vuPA1rK/LjE5OTkuQkQ3MjBQLrn606LLq9PvLrOsx+XW0NOiy6vX1i5tcDR8MzUyMDg3MDAwMnw4RjU3NDdGNDkyNUZFQUMwMUJFRjM1MjRCNDIwNkM5N3xoPUFaS0NRQTU0RGFERVJPTUNTU0RQSzRIWEdZMkw0N1NYUnwvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dsqu7977jwNayvy4xOTk5LkJENzIwUC65+tOiy6vT7y6zrMfl1tDTosur19YubXA0fDM1MjA4NzAwMDJ8OEY1NzQ3RjQ5MjVGRUFDMDFCRUYzNTI0QjQyMDZDOTd8aD1BWktDUUE1NERhREVST01DU1NEUEs0SFhHWTJMNDdTWFJ8Lw=="
+        }
+      },
+      {
+        "name": "1998金凯瑞高分剧情《楚门的世界》BD720P.国英双语.中英双字",
+        "IMDb": "tt0120382",
+        "Douban": "1292064",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV2z/sPFtcTKwL3nLkJENzIwUC65+tOiy6vT7y7W0NOiy6vX1i5ta3Z8MzAwNDE5Njc0MXw4QTQ4MkFDRDFDQzg1RUREQUMxNTlCQzgwMjk2QzAzM3xoPUJTU0g2WlZLTVBBRlJGQjZMR0daU0VKVzRaRkRENjNKfC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21ds/7DxbXEysC95y5CRDcyMFAuufrTosur0+8u1tDTosur19YubWt2fDMwMDQxOTY3NDF8OEE0ODJBQ0QxQ0M4NUVEREFDMTU5QkM4MDI5NkMwMzN8aD1CU1NINlpWS01QQUZSRkI2TEdHWlNFSlc0WkZERDYzSnwv"
+        }
+      },
+      {
+        "name": "1994经典奇幻喜剧《变相怪杰》BD中英双字1024/1280高清",
+        "IMDb": "tt0110475",
+        "Douban": "1297570",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFmdHA6Ly9keTEzMS5jb206NnZkeS5jb21AZnRwMi42NmUuY2M6NjkwNy+hvjZ2tefTsHd3dy5keTEzMS5jb22hv7Hkz+C51r3cQkTW0NOiy6vX1jEyODC438flLnJtdmJaWg==",
+          "qqdl": "qqdl://ZnRwOi8vZHkxMzEuY29tOjZ2ZHkuY29tQGZ0cDIuNjZlLmNjOjY5MDcvob42drXn07B3d3cuZHkxMzEuY29tob+x5M/guda93EJE1tDTosur19YxMjgwuN/H5S5ybXZi"
+        }
+      },
+      {
+        "name": "1997吴宇森高分动作《变脸/夺面双雄》BD720P.国英双语.高清中英双字",
+        "IMDb": "tt0119094",
+        "Douban": "1292659",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV2x5MGzLjE5OTcuQkQ3MjBQLrn606LLq9PvLtbQ06LLq9fWLm1wNHwyMzUzMDQxMDUxfEM4MjU5QkRFRjJCQzg4OUYwRDQ1NzNFN0Y4OEE2MzU4fGg9SEtHVzNLWlBCVzZRSkRWNEFOSVNOSDU0QVhFSDI0QUx8L1pa",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dseTBsy4xOTk3LkJENzIwUC65+tOiy6vT7y7W0NOiy6vX1i5tcDR8MjM1MzA0MTA1MXxDODI1OUJERUYyQkM4ODlGMEQ0NTczRTdGODhBNjM1OHxoPUhLR1czS1pQQlc2UUpEVjRBTklTTkg1NEFYRUgyNEFMfC8="
+        }
+      },
+      {
+        "name": "1994高分犯罪剧情《肖申克的救赎》BD720P.国粤英五语.高清中英双字",
+        "IMDb": "tt0111161",
+        "Douban": "1292052",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3QpMnqv8u1xL7IyuouMTk5NC5CRDcyMFAuufrUwdOizuXT7y6zrMfl1tDTosur19YubXA0fDQwNzM4NTkzNjd8NTdDMEZBOUZBMUUzQ0MwQjZDNEE2OTFDNDk4N0Y4NDl8aD1TMjdGQVhON1JTNDNaMk9OVFpEUjdTRVJHUDNTWU4ySnwvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21d0KTJ6r/LtcS+yMrqLjE5OTQuQkQ3MjBQLrn61MHTos7l0+8us6zH5dbQ06LLq9fWLm1wNHw0MDczODU5MzY3fDU3QzBGQTlGQTFFM0NDMEI2QzRBNjkxQzQ5ODdGODQ5fGg9UzI3RkFYTjdSUzQzWjJPTlRaRFI3U0VSR1AzU1lOMkp8Lw=="
+        }
+      },
+      {
+        "name": "1994高分剧情爱情《阿甘正传》BD720P.国英双语.高清中英双字",
+        "IMDb": "tt0109830",
+        "Douban": "1292720",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV2worjK1f20qy5Gb3JyZXN0Lkd1bXAuMTk5NC5CRDcyMFAuufrTosur0+8uuN/H5dbQ06LLq9fWLm1rdnwyODU2NDI5MzI0fEM4Q0JGM0VFOUU3NENGMjg0Q0IwOUFCREY0QTYwNUQ2fGg9VFBBTlZIUlVOU0tRN0taTU5NUzVWQ1RONVlJR1lIWlZ8L1pa",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dsKK4ytX9tKsuRm9ycmVzdC5HdW1wLjE5OTQuQkQ3MjBQLrn606LLq9PvLrjfx+XW0NOiy6vX1i5ta3Z8Mjg1NjQyOTMyNHxDOENCRjNFRTlFNzRDRjI4NENCMDlBQkRGNEE2MDVENnxoPVRQQU5WSFJVTlNLUTdLWk1OTVM1VkNUTjVZSUdZSFpWfC8="
+        }
+      },
+      {
+        "name": "2000汤姆汉克斯高分冒险《荒岛余生》BD720P.高清中英双字",
+        "IMDb": "tt0162222",
+        "Douban": "1298653",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV27xLW60+DJ+i5DYXN0LkF3YXkuMjAwMC5CRDcyMFAubWt2fDI1NzQ4Mzg3Nzh8QkQ0M0YyMkJGQjk5MjBBMjJGQkU3NTE5MUY3MjRBMzh8aD1CUTUyVUVLU0hNRVVVWFZRNkpZVlFSTFFKWU9aV1VCUnwvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21du8S1utPgyfouQ2FzdC5Bd2F5LjIwMDAuQkQ3MjBQLm1rdnwyNTc0ODM4Nzc4fEJENDNGMjJCRkI5OTIwQTIyRkJFNzUxOTFGNzI0QTM4fGg9QlE1MlVFS1NITUVVVVhWUTZKWVZRUkxRSllPWldVQlJ8Lw=="
+        }
+      },
+      {
+        "name": "1993让雷诺高分喜剧《时空急转弯》BD720P.国法双语.中字",
+        "IMDb": "tt0108500",
+        "Douban": "1292736",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3Ksb/VvLHXqs3kLkJENzIwUC65+reoy6vT7y7W0NfWLm1wNHwxODEwMzk3NzI0fEZDRTY2RjVFOTJCQTE5RDIzQTJCRkZDN0QxQTREQzQwfGg9VkRKSVlTVURKQjI0SkJNTFBOQzVSQ1lXNkEySTRDR098L1pa",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dyrG/1byx16rN5C5CRDcyMFAuufq3qMur0+8u1tDX1i5tcDR8MTgxMDM5NzcyNHxGQ0U2NkY1RTkyQkExOUQyM0EyQkZGQzdEMUE0REM0MHxoPVZESklZU1VESkIyNEpCTUxQTkM1UkNZVzZBMkk0Q0dPfC8="
+        }
+      },
+      {
+        "name": "1998让雷诺科幻喜剧《时空急转弯2》BD720P.国法双语.中字",
+        "IMDb": "tt0120882",
+        "Douban": "1299859",
+        "links": {
+          "ed2k": "",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3Ksb/VvLHXqs3kMi5CRDcyMFAuufq3qMur0+8u1tDX1i5tcDR8MTk5MTgxNDgzN3wyQkYxNjQ5QUJFNEZGMjVEMjNFNkZCQTlBREUxRTdDRnxoPU5PSVhMWklTR1hHNjYzNVdaMkZDWVZFWTRBUEg2SlFTfC9aWg==",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dyrG/1byx16rN5DIuQkQ3MjBQLrn6t6jLq9PvLtbQ19YubXA0fDE5OTE4MTQ4Mzd8MkJGMTY0OUFCRTRGRjI1RDIzRTZGQkE5QURFMUU3Q0Z8aD1OT0lYTFpJU0dYRzY2MzVXWjJGQ1lWRVk0QVBINkpRU3wv"
+        }
+      }
+    ]
+  },
+  {
     "category": "More",
     "closing": true,
     "movies": [
       {
         "name": "",
         "IMDb": "",
+        "Douban": "",
         "links": {
           "ed2k": "",
           "magnet": "",
           "thunder": "",
-          "qqdl": ""
+          "qqdl": "",
+          "ftp": "",
+          "http": ""
         }
       }
     ]

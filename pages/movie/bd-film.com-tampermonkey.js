@@ -18,6 +18,7 @@ function newJSON() {
     return {
         "name": "",
         "IMDb": "",
+        "Douban": "",
         "links": {
             "ed2k": "",
             "magnet": "",
@@ -59,6 +60,12 @@ function getJSON(shadow_frame, td_el) {
         var execR = p_IMDb.exec(shadow_frame.innerHTML);
         if (execR) {
             json.IMDb = execR[1];
+        }
+
+        var p_Douban = new RegExp("movie.douban.com/subject/([0-9]*)");
+        var e_Douban = p_Douban.exec(shadow_frame.innerHTML);
+        if(e_Douban){
+            json.Douban = e_Douban[1];
         }
     }
 
