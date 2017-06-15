@@ -51,10 +51,14 @@
                                     <span class="movie-name">{{movie.name}}</span>
                                 </a>
                                 <span class="float-right">
+                                    <a class="movie-link" title="电驴链接" target="_blank"
+                                       v-if="movie.links.ed2k" v-bind:href="movie.links.ed2k">电驴</a>
+                                    <a class="movie-link" title="磁力链接" target="_blank"
+                                       v-if="movie.links.magnet" v-bind:href="movie.links.magnet">磁力</a>
                                     <a class="movie-link" title="迅雷下载" target="_blank"
                                        v-if="movie.links.thunder" v-bind:href="movie.links.thunder">迅雷</a>
-                                     <a class="movie-link" title="QQ旋风下载" target="_blank"
-                                        v-if="movie.links.qqdl" v-bind:href="movie.links.qqdl">旋风</a>
+                                    <a class="movie-link" title="QQ旋风下载" target="_blank"
+                                       v-if="movie.links.qqdl" v-bind:href="movie.links.qqdl">旋风</a>
                                 </span>
                             </p>
                         </li>
@@ -67,7 +71,7 @@
 </div>
 
 <script>
-     htmlLoader("/pages/header/index.html", "#header-content");
+    htmlLoader("/pages/header/index.html", "#header-content");
 </script>
 </body>
 </html>
