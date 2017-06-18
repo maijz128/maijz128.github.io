@@ -23,7 +23,9 @@ function newJSON() {
             "ed2k": "",
             "magnet": "",
             "thunder": "",
-            "qqdl": ""
+            "qqdl": "",
+            "ftp": "",
+            "http": ""
         }
     };
 }
@@ -45,6 +47,7 @@ function initUI() {
             a_el.innerText = "JSON";
 
             td_el.appendChild(a_el);
+
         }
     }
 }
@@ -64,14 +67,24 @@ function getJSON(shadow_frame, td_el) {
 
         var p_Douban = new RegExp("movie.douban.com/subject/([0-9]*)");
         var e_Douban = p_Douban.exec(shadow_frame.innerHTML);
-        if(e_Douban){
+        if (e_Douban) {
             json.Douban = e_Douban[1];
         }
     }
 
     if (td_el) {
-        var a_el_list = td_el.querySelectorAll("a");
         var href_list = [];
+
+        // ed2k
+        var td_parent = td_el.parentNode;
+        var bd_address_a = td_parent.querySelector(".bd-address a");
+        if (bd_address_a) {
+            var ed2k = getAttr(bd_address_a, "href");
+            href_list.push(ed2k);
+        }
+
+        // thunder, qqdl
+        var a_el_list = td_el.querySelectorAll("a");
         for (var i = 0; i < a_el_list.length; i++) {
             var a_el = a_el_list[i];
             var href = getAttr(a_el, "href");
@@ -106,6 +119,12 @@ function setLinks(json, href_list) {
         else if (stringStartWith(href, "qqdl")) {
             json.links.qqdl = href;
         }
+        else if (stringStartWith(href, "ftp")) {
+            json.links.ftp = href;
+        }
+        // else if (stringStartWith(href, "http")) {
+        //     json.links.http = href;
+        // }
     }
     return json;
 }
