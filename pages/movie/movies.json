@@ -334,12 +334,12 @@
         }
       },
       {
-        "name": "1993李连杰经典动作喜剧《方世玉续集》DVD国粤双语",
+        "name": "1993李连杰经典动作喜剧《方世玉II万夫莫敌》 1080P国粤英三语中繁字（美版）",
         "IMDb": "tt0106937",
         "Douban": "1295485",
         "links": {
-          "ed2k": "",
-          "magnet": "magnet:?xt=urn:btih:70FB9D3877360DE4D6BC2417F2710503D4DB70F4",
+          "ed2k": "ed2k://|file|方世玉II.The.Legend.II.1993.WEB-DL.龙王朝1080P.X265.10Bit.TrdAudio.DD5.1.2Sup_.mkv|4574009202|0D85D4A85726D00384E08D58274E5F89|h=2OWUIHSH4TINDRMQC5P23BRY7T5C6A3L|/",
+          "magnet": "",
           "thunder": "",
           "qqdl": ""
         }
@@ -546,6 +546,25 @@
           "magnet": "",
           "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV284NP8t+fUxjEuUHJpc29uLm9uLkZpcmUuMTk4Ny5CRDcyMFAuufrUwcur0+8uuN/H5dbQ19YubWt2fDMwMDMzNTExNzl8RUE0RUMxQTk5OEY3QjUwMDYyMDgwRjFGRkNFOEI1Njh8aD1NTUpWU1ZKR0pERkZIR0JXR05HTkdUTVJLS0VLNUJDQXwvWlo=",
           "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dvODT/Lfn1MYxLlByaXNvbi5vbi5GaXJlLjE5ODcuQkQ3MjBQLrn61MHLq9PvLrjfx+XW0NfWLm1rdnwzMDAzMzUxMTc5fEVBNEVDMUE5OThGN0I1MDA2MjA4MEYxRkZDRThCNTY4fGg9TU1KVlNWSkdKREZGSEdCV0dOR05HVE1SS0tFSzVCQ0F8Lw=="
+        }
+      }
+    ]
+  },
+  {
+    "category": "国语",
+    "closing": true,
+    "movies": [
+      {
+        "name": "2010姜文动作喜剧《让子弹飞》BD720P.川普双语.高清中字",
+        "IMDb": "tt1533117",
+        "Douban": "3742360",
+        "links": {
+          "ed2k": "ed2k://|file|[BD影视分享bd-film.com]让子弹飞.BD720P.国语四川话双语.高清中字.mp4|3008309538|21A673317C9CD530330933474848D0B9|h=YWQQS5J4D7LHTVILHFEUFYO4YBR4ACE3|/",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV3Iw9fTta+3yS5CRDcyMFAuufrT78vEtKi7sMur0+8uuN/H5dbQ19YubXA0fDMwMDgzMDk1Mzh8MjFBNjczMzE3QzlDRDUzMDMzMDkzMzQ3NDg0OEQwQjl8aD1ZV1FRUzVKNEQ3TEhUVklMSEZFVUZZTzRZQlI0QUNFM3wvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21dyMPX07Wvt8kuQkQ3MjBQLrn60+/LxLSou7DLq9PvLrjfx+XW0NfWLm1wNHwzMDA4MzA5NTM4fDIxQTY3MzMxN0M5Q0Q1MzAzMzA5MzM0NzQ4NDhEMEI5fGg9WVdRUVM1SjREN0xIVFZJTEhGRVVGWU80WUJSNEFDRTN8Lw==",
+          "ftp": "",
+          "http": ""
         }
       }
     ]
