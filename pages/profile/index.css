@@ -1,4 +1,9 @@
 
+/* 防止页面闪烁 */
+[v-cloak] {
+    display: none !important;
+}
+
 body {
     min-width: 1020px;
     word-wrap: break-word;

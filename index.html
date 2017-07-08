@@ -33,7 +33,7 @@
     <div id="pane-profile" class="container-lg clearfix px-3 mt-4">
 
         <div class="col-3 float-left pr-3">
-            <div id="user">
+            <div id="user" v-cloak>
                 <a v-bind:href="json.html_url" class="u-photo d-block ">
                     <img class="avatar width-full rounded-2" height="230"
                          v-bind:src="json.avatar_url" width="230"></a>
@@ -168,7 +168,7 @@
             </div>
 
 
-            <div id="projects">
+            <div id="projects" v-cloak>
 
                 <div v-for="(pro, proIndex) in projects">
 
