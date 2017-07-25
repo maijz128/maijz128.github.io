@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="/html/lib/github-markdown-css/github-markdown.css">
     <link rel="stylesheet" href="/html/lib/highlight/styles/vs.css">
     <script src="/html/lib/highlight/highlight.pack.js"></script>
-    <script defer="defer">hljs.initHighlightingOnLoad();</script>
+    <script defer="defer"></script>
     <script src="/html/lib/marked/marked.min.js"></script>
     <script defer="defer">
+        hljs.initHighlightingOnLoad();
         // Synchronous highlighting with highlight.js
         marked.setOptions({
             highlight: function (code) {
