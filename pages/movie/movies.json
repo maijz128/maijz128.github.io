@@ -727,6 +727,19 @@
     "closing": true,
     "movies": [
       {
+        "name": "2016高分剧情犯罪《赴汤蹈火》BD720P.高清中英双字",
+        "IMDb": "tt2582782",
+        "Douban": "26389148",
+        "links": {
+          "ed2k": "ed2k://|file|[BD影视分享bd-film.com]赴汤蹈火.Hell.or.High.Water.2016.BD720P.高清中英双字.mp4|2330520610|04D3C52BA176156CE304A64D1A176AF7|h=724NQY7O5YBLRDNMOQKOVIKPMO4SZDRO|/|sources,98.159.110.45:4812|/",
+          "magnet": "",
+          "thunder": "thunder://QUFlZDJrOi8vfGZpbGV8W0JE07DK07fWz+1iZC1maWxtLmNvbV24sMzAtbi78C5IZWxsLm9yLkhpZ2guV2F0ZXIuMjAxNi5CRDcyMFAuuN/H5dbQ06LLq9fWLm1wNHwyMzMwNTIwNjEwfDA0RDNDNTJCQTE3NjE1NkNFMzA0QTY0RDFBMTc2QUY3fGg9NzI0TlFZN081WUJMUkROTU9RS09WSUtQTU80U1pEUk98L3xzb3VyY2VzLDk4LjE1OS4xMTAuNDU6NDgxMnwvWlo=",
+          "qqdl": "qqdl://ZWQyazovL3xmaWxlfFtCRNOwytO31s/tYmQtZmlsbS5jb21duLDMwLW4u/AuSGVsbC5vci5IaWdoLldhdGVyLjIwMTYuQkQ3MjBQLrjfx+XW0NOiy6vX1i5tcDR8MjMzMDUyMDYxMHwwNEQzQzUyQkExNzYxNTZDRTMwNEE2NEQxQTE3NkFGN3xoPTcyNE5RWTdPNVlCTFJETk1PUUtPVklLUE1PNFNaRFJPfC98c291cmNlcyw5OC4xNTkuMTEwLjQ1OjQ4MTJ8Lw==",
+          "ftp": "",
+          "http": ""
+        }
+      },
+      {
         "name": "2017高分动作惊悚《疾速追杀2/疾速特攻》HD1080P.特效中英双字",
         "IMDb": "tt4425200",
         "Douban": "26333560",

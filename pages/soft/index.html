@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Soft - MaiJZ</title>
+
+    <link rel="fluid-icon" href="/html/img/fluidicon.jpg" title="MaiJZ">
+    <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
+
+    <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
+
+    <script src="/html/js/vue.min.js"></script>
+
+    <script src="/html/js/tool.js"></script>
+    <script src="/html/js/toggle-element.js"></script>
+    <script src="/html/js/simple-tabs.js"></script>
+
+    <link rel="stylesheet" href="/html/lib/github-markdown-css/github-markdown.css">
+    <link rel="stylesheet" href="/html/lib/highlight/styles/vs.css">
+    <script src="/html/lib/highlight/highlight.pack.js"></script>
+    <script defer="defer">hljs.initHighlightingOnLoad();</script>
+    <script src="/html/lib/marked/marked.min.js"></script>
+    <script defer="defer">
+        // Synchronous highlighting with highlight.js
+        marked.setOptions({
+            highlight: function (code) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
+
+        function loadMarkdown(url, containerID) {
+            fetch(url).then(function (response) {
+                return response.text()
+            }).then(function (text) {
+                document.getElementById(containerID).innerHTML = marked(text);
+            }).catch(function (err) {
+                console.error(err)
+            });
+        }
+    </script>
+
+</head>
+<body>
+<div class="position-relative">
+    <div id="header-content"></div>
+</div>
+<div role="main">
+    <div class="container-lg clearfix px-3 mt-4">
+        <div class="col-3 float-left pr-3">
+            <article id="summary" class="markdown-body">
+
+            </article>
+        </div>
+
+        <div class="col-9 float-left pl-2">
+            <article id="content"  class="markdown-body">
+
+            </article>
+        </div>
+    </div>
+</div>
+
+<script defer="defer">
+    const URL_SUMMARY = "SUMMARY.md";
+    const ID_SUMMARY = "summary";
+    loadMarkdown(URL_SUMMARY, ID_SUMMARY);
+
+    const URL_CONTENT = "content.md";
+    const ID_CONTEXT = "content";
+    loadMarkdown(URL_CONTENT, ID_CONTEXT);
+</script>
+
+<script>
+    htmlLoader("/pages/header/index.html", "#header-content");
+</script>
+</body>
+</html>
