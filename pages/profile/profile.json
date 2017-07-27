@@ -10,6 +10,7 @@
     {
       "title": "项目",
       "repos": [
+		"voxel-model",
         "AutoUnlock",
         "bilibili-index-icon",
         "Checker-for-Jandan",
