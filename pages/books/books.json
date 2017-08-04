@@ -11,6 +11,15 @@
         "links": {
           "douban": "1024570"
         }
+      },
+      {
+        "name": "计算机图形学",
+        "name_original": "",
+        "bio": "选读",
+        "pviews": "1",
+        "links": {
+          "douban": "1156818"
+        }
       }
     ]
   },
@@ -67,6 +76,21 @@
         "pviews": "1",
         "links": {
           "douban": "1140457"
+        }
+      }
+    ]
+  },
+  {
+    "category": "C++",
+    "closing": false,
+    "books": [
+      {
+        "name": "C++ Primer 中文版（第 5 版）",
+        "name_original": "C++ Primer, 5th Edition",
+        "bio": "必读",
+        "pviews": "1",
+        "links": {
+          "douban": "25708312"
         }
       }
     ]
