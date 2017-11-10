@@ -77,13 +77,15 @@
         const search = location.search;
         // 编码
         if (search.indexOf(ENCODE) === 0) {
-            const content = search.replace(ENCODE, "");
+            var content = search.replace(ENCODE, "");
+            content = decodeURIComponent(content);
             setContent(content);
             encodeContent(content);
         }
         // 解码
         else if (search.indexOf(DECODE) === 0) {
-            const content = search.replace(DECODE, "");
+            var content = search.replace(DECODE, "");
+            content = decodeURIComponent(content);
             setContent(content);
             decodeContent(content);
         }
