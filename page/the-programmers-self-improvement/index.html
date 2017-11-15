@@ -9,6 +9,7 @@
     <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
 
     <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
+    <link rel="stylesheet" href="/html/css/base.css">
 
     <link rel="stylesheet" href="index.css">
 
@@ -169,7 +170,7 @@
     </div>
 </div>
 
-<div role="main">
+<div role="main" class="maincontent">
     <div class="container-lg clearfix px-3 mt-4">
         <div class="col-3 float-left pr-3"></div>
 
@@ -180,5 +181,32 @@
     </div>
 </div>
 
+<shp include="/template/footer/index.html"><style>
+    .site-footer {
+        background-color: #222;
+        color: white;
+        min-height: 60px;
+        font-size: 16px;
+        padding: 1em;
+        letter-spacing: 1px;
+    }
+
+    .site-info {
+        text-align: center;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .site-info a:hover{
+        color: #78909c;
+        text-decoration: none;
+    }
+</style>
+<footer class="site-footer">
+    <div class="site-info">
+        MaiJZ © 2017
+        <span class="sep"> | </span>
+        Powered by <a href="https://github.com/maijz128/shpnode">SHPNode</a>
+    </div>
+</footer></shp>
 
 </body></html>

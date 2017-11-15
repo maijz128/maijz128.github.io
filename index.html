@@ -11,7 +11,9 @@
 
     <link rel="stylesheet" href="html/github-languages-color/colors.css">
     <link rel="stylesheet" href="html/css/pinned-repo-item.css">
+    <link rel="stylesheet" href="html/css/base.css">
     <link rel="stylesheet" href="page/profile/index.css">
+
 
     <script src="html/js/tool.js"></script>
     <script src="html/github-languages-color/colors.js"></script>
@@ -171,7 +173,7 @@
 </div></shp>
     </div>
 </div>
-<div role="main">
+<div role="main" class="maincontent">
     <div id="pane-profile" class="container-lg clearfix px-3 mt-4">
 
         <div class="col-3 float-left pr-3">
@@ -356,6 +358,35 @@
 </div>
 
 
+<shp include="/template/footer/index.html"><style>
+    .site-footer {
+        background-color: #222;
+        color: white;
+        min-height: 60px;
+        font-size: 16px;
+        padding: 1em;
+        letter-spacing: 1px;
+    }
+
+    .site-info {
+        text-align: center;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .site-info a:hover{
+        color: #78909c;
+        text-decoration: none;
+    }
+</style>
+<footer class="site-footer">
+    <div class="site-info">
+        MaiJZ © 2017
+        <span class="sep"> | </span>
+        Powered by <a href="https://github.com/maijz128/shpnode">SHPNode</a>
+    </div>
+</footer></shp>
+
+<div style="display: none;">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 
     <symbol id="svg-email" viewBox="0 0 14 16">
@@ -472,6 +503,6 @@
         </g>
     </symbol>
 </svg>
-
+</div>
 
 </body></html>
