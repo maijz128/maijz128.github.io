@@ -1,0 +1,211 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的电影 - MaiJZ</title>
+
+    <link rel="fluid-icon" href="/html/img/fluidicon.jpg" title="MaiJZ">
+    <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
+
+
+    <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script src="/html/js/tool.js"></script>
+    <script src="/html/js/toggle-element.js"></script>
+    <script src="/html/js/vue.min.js"></script>
+    <script src="index.js"></script>
+
+</head>
+<body>
+<div class="position-relative">
+    <div id="header-content">
+        <shp include="/template/header/index.html">
+
+<div class="header-body">
+    <link rel="stylesheet" href="/html/css/p/header.css">
+
+    <div id="header" class="header" role="banner">
+        <div class="container clearfix">
+            <a aria-label="GitHub" class="header-logo-invertocat" target="_top" href="https://github.com/maijz128">
+                <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                    <use href="#svg-github"/>
+                </svg>
+            </a>
+            <a aria-label="Twitter" class="header-logo-invertocat" target="_top" href="https://twitter.com/maijz128">
+                <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                    <use href="#svg-twitter"/>
+                </svg>
+            </a>
+            <a aria-label="Email" class="header-logo-invertocat" target="_top" href="mailto:maijz128@gmail.com">
+                <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                    <use href="#svg-email"/>
+                </svg>
+
+            </a>
+
+            <ul class="header-nav float-right st-nav-tabs" role="navigation">
+                <li class="header-nav-item">
+                    <a class="header-nav-link" href="/" target="_top">Profile</a>
+                </li>
+                <li class="header-nav-item">
+                    <a class="header-nav-link " href="/page/books/" target="_top">Books</a>
+                </li>
+                <li class="header-nav-item">
+                    <a class="header-nav-link" href="/page/the-programmers-self-improvement/" target="_top">程序员的自我修养</a>
+                </li>
+
+                <li class="header-nav-item dropdown  nav-item">
+                    <a class="header-nav-link" href="javascript:void(0);">More</a>
+
+                    <div class="dropdown-menu-content sub-items dropdown-menu-sw">
+                        <div class="dropdown-menu dropdown-menu-sw">
+                            <!--<div class="dropdown-divider"></div>-->
+
+                            <a class="dropdown-item" href="/page/movie/">
+                                Movie
+                            </a>
+
+                            <!--<div class="dropdown-divider"></div>-->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <svg style="display: none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+        <symbol id="svg-email" viewBox="0 0 14 16">
+            <g>
+                <path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"/>
+            </g>
+        </symbol>
+
+        <symbol id="svg-github" viewBox="0 0 16 16">
+            <g id="github" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+            </g>
+        </symbol>
+
+        <symbol id="svg-facebook" viewBox="0 0 64 64">
+            <g id="facebook" viewBox="0 0 64 64">
+                <circle id="circle" fill="#3b5998" cx="32" cy="32" r="32"/>
+                <path id="fb" fill="#FFFFFF" d="M42.8,23.8h-7.4v-4.8c0-1.8,1.2-2.2,2.1-2.2c0.8,0,5.2,0,5.2,0v-8l-7.2,0c-8,0-9.8,6-9.8,9.8v5.3
+	h-4.6V32h4.6c0,10.6,0,23.3,0,23.3h9.7c0,0,0-12.9,0-23.3H42L42.8,23.8z"/>
+            </g>
+        </symbol>
+        <symbol id="svg-twitter" viewBox="0 0 32 32">
+            <g id="twitter-home_1_">
+                <circle fill="#00acee" cx="16" cy="16" r="16"/>
+                <g>
+                    <path fill="white" d="M25.753,9.549c-0.736,0.327-1.527,0.548-2.357,0.647c0.847-0.508,1.498-1.312,1.804-2.271
+          c-0.793,0.47-1.671,0.812-2.606,0.996C21.846,8.124,20.78,7.626,19.6,7.626c-2.266,0-4.103,1.837-4.103,4.103
+          c0,0.322,0.036,0.635,0.106,0.935c-3.41-0.171-6.433-1.805-8.458-4.288C6.792,8.983,6.59,9.687,6.59,10.44
+          c0,1.423,0.724,2.679,1.826,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.035,0,0.052c0,1.988,1.414,3.646,3.292,4.023
+          c-0.345,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.522-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85
+          c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843
+          c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C24.507,11.095,25.203,10.373,25.753,9.549z"/>
+                </g>
+            </g>
+        </symbol>
+        <symbol id="svg-linkedin" viewBox="0 0 32 32">
+            <g id="linkedin-home_1_">
+                <circle fill="#007fb2" cx="16" cy="16" r="16"/>
+                <path fill="white" d="M10.962,22.594H7.452V11.363h3.509V22.594z M9.118,9.959H9.093C7.823,9.959,7,9.1,7,8.012
+        c0-1.109,0.847-1.949,2.142-1.949c1.295,0,2.091,0.838,2.116,1.947C11.259,9.098,10.437,9.959,9.118,9.959z M25,22.594h-3.978
+        v-5.811c0-1.522-0.623-2.559-1.991-2.559c-1.047,0-1.628,0.7-1.9,1.377c-0.101,0.241-0.086,0.579-0.086,0.916v6.077h-3.941
+        c0,0,0.05-10.295,0-11.231h3.941v1.763c0.234-0.771,1.492-1.87,3.503-1.87c2.492,0,4.452,1.616,4.452,5.093V22.594z"/>
+            </g>
+        </symbol>
+        <symbol id="svg-stackoverflow" viewBox="0 0 32 32">
+            <g id="stackoverflow">
+                <circle cx="16" cy="16" r="16"/>
+                <g id="layer1_5_">
+                    <path fill="white" id="path2830_5_" d="M7.686,17.837h1.578v7.042H19.71v-7.042h1.663v8.748H7.677L7.686,17.837z"/>
+                    <rect fill="white" id="rect3604_5_" x="10.259" y="21.991" width="8.226" height="1.75"/>
+
+                    <rect fill="white" id="rect3606_5_" x="10.346" y="19.234" transform="matrix(-0.9954 -0.0961 0.0961 -0.9954 26.9613 41.5599)" width="8.27" height="1.794"/>
+
+                    <rect fill="white" id="rect3606-1_5_" x="10.806" y="16.368" transform="matrix(-0.9624 -0.2716 0.2716 -0.9624 24.6298 37.9392)" width="8.27" height="1.794"/>
+
+                    <rect fill="white" id="rect3606-1-3_5_" x="12.075" y="13.261" transform="matrix(-0.856 -0.517 0.517 -0.856 22.7643 34.6582)" width="8.27" height="1.794"/>
+
+                    <rect fill="white" id="rect3606-1-3-7_5_" x="14.705" y="10.427" transform="matrix(-0.5824 -0.8129 0.8129 -0.5824 20.6069 33.2336)" width="8.27" height="1.794"/>
+
+                    <rect fill="white" id="rect3606-1-3-7-6_5_" x="18.417" y="8.942" transform="matrix(-0.1648 -0.9863 0.9863 -0.1648 16.5646 33.7041)" width="8.27" height="1.794"/>
+                </g>
+            </g>
+        </symbol>
+        <symbol id="svg-stackoverflow-hover" viewBox="0 0 32 32">
+            <g id="stackoverflow-hover">
+                <g id="circle">
+                    <path id="outer" d="M16,0C7.2,0,0,7.2,0,16s7.2,16,16,16c8.8,0,16-7.2,16-16S24.8,0,16,0L16,0z"/>
+                    <path id="inner" fill="#FFFFFF" d="M16,1c8.3,0,15,6.7,15,15s-6.7,15-15,15S1,24.3,1,16S7.7,1,16,1"/>
+                </g>
+                <g id="icon">
+                    <path id="path2830_2_" fill="#919191" d="M7.8,17.7h1.6v7h10.4v-7h1.7v8.7H7.8L7.8,17.7z"/>
+                    <rect id="rect3604_2_" x="10.4" y="21.9" fill="#919191" width="8.2" height="1.8"/>
+
+                    <rect id="rect3606_2_" x="10.4" y="19.1" transform="matrix(0.9954 9.609730e-02 -9.609730e-02 0.9954 1.9924 -1.3087)" fill="#A78B68" width="8.3" height="1.8"/>
+
+                    <rect id="rect3606-1_2_" x="10.9" y="16.3" transform="matrix(0.9624 0.2716 -0.2716 0.9624 5.228 -3.4402)" fill="#C19653" width="8.3" height="1.8"/>
+
+                    <rect id="rect3606-1-3_2_" x="12.2" y="13.2" transform="matrix(0.856 0.517 -0.517 0.856 9.6174 -6.4081)" fill="#D48C28" width="8.3" height="1.8"/>
+
+                    <rect id="rect3606-1-3-7_2_" x="14.8" y="10.3" transform="matrix(0.5824 0.8129 -0.8129 0.5824 17.035 -10.7104)" fill="#FE8908" width="8.3" height="1.8"/>
+
+                    <rect id="rect3606-1-3-7-6_2_" x="18.5" y="8.8" transform="matrix(0.1648 0.9863 -0.9863 0.1648 28.5276 -14.2094)" fill="#FF7A15" width="8.3" height="1.8"/>
+                </g>
+            </g>
+        </symbol>
+    </svg>
+
+</div></shp>
+    </div>
+</div>
+<div role="main">
+    <div class="container-lg clearfix px-3 mt-4">
+        <div class="col-3 float-left pr-3"></div>
+
+        <div class="col-9 float-left pl-2">
+            <div id="movies-container">
+                <div class="category" v-for="(categoryObj,  categoryIndex) in json">
+                    <h3 class="f4 mb-2 text-normal band">
+                        <span class="in-band">{{ categoryObj.category }}</span>
+                        <span class="out-of-band">
+                            <span>
+                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex" v-bind:te-closing="categoryObj.closing" href="JavaScript:;" title="toggle list">
+                                   <span class="inner toggle-el-show-hint">[−]</span>
+                                   <span class="inner toggle-el-hide-hint">[+]</span>
+                               </a>
+                            </span>
+                        </span>
+                    </h3>
+
+                    <ol class="pinned-movies-list" v-bind:id="'category' + categoryIndex">
+                        <li class="pinned-movie-item" v-for="movie in categoryObj.movies">
+                            <p>
+                                <a class="movie-link" href="javascript:void(0);" v-on:click="profile(movie)">
+                                    <span class="movie-name">{{movie.name}}</span>
+                                </a>
+                                <span class="float-right">
+                                    <a class="movie-link" title="电驴链接" target="_blank" v-if="movie.links.ed2k" v-bind:href="movie.links.ed2k">电驴</a>
+                                    <a class="movie-link" title="磁力链接" target="_blank" v-if="movie.links.magnet" v-bind:href="movie.links.magnet">磁力</a>
+                                    <a class="movie-link" title="迅雷下载" target="_blank" v-if="movie.links.thunder" v-bind:href="movie.links.thunder">迅雷</a>
+                                    <a class="movie-link" title="QQ旋风下载" target="_blank" v-if="movie.links.qqdl" v-bind:href="movie.links.qqdl">旋风</a>
+                                    <a class="movie-link" title="ftp" target="_blank" v-if="movie.links.ftp" v-bind:href="movie.links.qqdl">FTP</a>
+                                    <a class="movie-link" title="http" target="_blank" v-if="movie.links.http" v-bind:href="movie.links.qqdl">HTTP</a>
+                                </span>
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</body></html>
