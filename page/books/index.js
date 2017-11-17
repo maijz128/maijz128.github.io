@@ -45,10 +45,12 @@ function Books() {
         }
     });
 
+    self.appData.json = Data_Books;
 
-    fetch(URL_BOOKS).then(function (response) {
-        return response.json();
-    }).then(function (json) {
-        self.appData.json = json;
-    });
+    //
+    // fetch(URL_BOOKS).then(function (response) {
+    //     return response.json();
+    // }).then(function (json) {
+    //     self.appData.json = json;
+    // });
 }

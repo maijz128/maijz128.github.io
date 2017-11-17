@@ -15,7 +15,6 @@ const URL_USER_REPOS = "https://api.github.com/users/{{userName}}/repos";
 const URL_CONFIG = "/page/profile/profile.json";
 
 
-
 const USER_JSON = {
     "login": "maijz128",
     "id": 6248618,
@@ -34,10 +33,9 @@ const _g = {};
 document.ready(function () {
     _g.languageColors = new LanguageColors();
 
-    fetchJSON(URL_CONFIG).then(function (json) {
-        _g.projects = new Projects(json, _g.languageColors);
-        _g.user = new User(json);
-    });
+    const json = Data_Profile;
+    _g.projects = new Projects(json, _g.languageColors);
+    _g.user = new User(json);
 });
 
 

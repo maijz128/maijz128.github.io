@@ -57,9 +57,5 @@ function Movies() {
     });
 
 
-    fetch(URL_MOVIES).then(function (response) {
-        return response.json();
-    }).then(function (json) {
-        self.appData.json = json;
-    });
+        self.appData.json = Data_Movies;
 }
