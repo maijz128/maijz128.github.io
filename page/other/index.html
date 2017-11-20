@@ -17,19 +17,7 @@
     <script src="/html/js/vue.min.js"></script>
 <!-- end head.html -->
 
-
-    <title>MaiJZ - Git 使用笔记</title>
-
-    <!-- start markdown-->
-    <link rel="stylesheet" href="/html/css/github-markdown.css">
-    <!--<link rel="stylesheet" href="/html/css/markedstyle-github.css">-->
-
-    <link rel="stylesheet" href="/html/lib/prism/prism.css">
-    <script src="/html/lib/prism/prism.js"></script>
-    <!-- end markdown-->
-
-    <script src="/html/js/simple-tabs.js"></script>
-
+    <title>乱七八糟 - MaiJZ</title>
 </head>
 <body>
 <!-- start header.html -->
@@ -143,108 +131,11 @@
         <div class="col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
-
-            <div class=".markdown-body">
-                <h1 id="git-">Git 使用笔记</h1>
-<h3 id="-">查看配置</h3>
-<pre><code>git config --list  
-</code></pre><h3 id="-">添加远程仓库</h3>
-<pre><code class="lang-git"> git remote add origin git://github.com/maijz/test-git.git
-</code></pre>
-<h3 id="-">配置用户名和密码</h3>
-<p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
-<pre><code class="lang-git">git config --global user.name &quot;maijz&quot;  
-git config --global user.email maijz@mail.com 
-git config --global user.mail &quot;maijz@mail.com&quot;
-</code></pre>
-<h3 id="-">强制删除提交到远程版本库的数据与版本记录</h3>
-<pre><code class="lang-git">git reset --hard HEAD~2                   # 取消当前版本之前的两次提交
-git push origin HEAD --force              # 强制提交到远程版本库，从而删除之前的两次提交数据
-</code></pre>
-<h3 id="-github-">删除github上的一个项目的内容，重新提交所有内容</h3>
-<pre><code class="lang-git">git rm -r --cached .
-git add .
-git commit -m &quot;.gitignore is now working&quot;
-</code></pre>
-<h3 id="-">创建新的空白分支</h3>
-<pre><code class="lang-git">git checkout --orphan gh-pages
-# 创建一个orphan的分支，这个分支是独立的
-
-git rm -rf .
-# 删除原来代码树下的所有文件
-
-# 注意这个时候你用git branch命令是看不见当前分支的名字的，除非你进行了第一次commit。
-
-git push origin gh-pages
-# 在commit操作之后，你就可以用git branch命令看到新分支的名字了，然后push到远程仓库。
-</code></pre>
-<h3 id="-">推送本地到远程分支</h3>
-<pre><code class="lang-git">git push origin 本地分支名:远程分支名
-</code></pre>
-<h3 id="-">新建远程分支，从当前分支</h3>
-<pre><code class="lang-git">git push origin master:dev
-</code></pre>
-<h3 id="-">新建本地分支，从远程分支并建立映射关系</h3>
-<pre><code class="lang-git">git checkout -b 本地分支名 origin/远程分支名
-</code></pre>
-<h3 id="-">新建本地分支，从远程分支但不会建立映射关系</h3>
-<pre><code class="lang-git">git fetch origin 远程分支名:本地分支名
-</code></pre>
-<h3 id="-">删除本地分支</h3>
-<pre><code class="lang-git">git branch -D 本地分支名
-</code></pre>
-<h3 id="-git-">删除git远程分支</h3>
-<pre><code class="lang-git"># 本地仓库 执行 
-git push origin  :{远程分支名}
-# 意思是将本地空分支推送到远程分支，相当于删除远程分支
-</code></pre>
-<h3 id="-">删除本地标签</h3>
-<pre><code class="lang-git">git tag -d 标签名
-</code></pre>
-<h3 id="-">删除远程标签</h3>
-<pre><code class="lang-git">git push origin :refs/tags/标签名
-</code></pre>
-<h3 id="git-pull-">Git pull 强制覆盖本地文件</h3>
-<pre><code class="lang-git">git fetch --all  
-git reset --hard origin/master 
-git pull
-</code></pre>
-<p>​    </p>
-<h3 id="-">强制推送代码</h3>
-<pre><code class="lang-git">git push -f
-</code></pre>
-<h3 id="git-fetch-">Git fetch 的简单用法:</h3>
-<h5 id="-">更新远程代码到本地仓库</h5>
-<pre><code class="lang-git"># 从远程的origin仓库的master分支下载到本地并新建一个分支temp
-git fetch origin master:temp
-
-# 比较本地的仓库和远程参考的区别
-git diff temp
-
-# 合并temp分支到master分支
-git merge temp
-</code></pre>
-<h3 id="-">代理设置</h3>
-<pre><code class="lang-git">git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;
-
-git config --global https.proxy &#39;socks5://127.0.0.1:1080&#39;
-
-git config --global http.sslverify false
-</code></pre>
-<h2 id="-">别名</h2>
-<p>只需要敲一行命令，告诉Git，以后<code>st</code>就表示<code>status</code>：</p>
-<pre><code class="lang-git"> git config --global alias.st status
-</code></pre>
-<p>当然还有别的命令可以简写，很多人都用co表示checkout，ci表示commit，br表示branch：</p>
-<pre><code class="lang-git"> git config --global alias.co checkout
- git config --global alias.ci commit
- git config --global alias.br branch
- git config --global alias.logl log -list
-</code></pre>
+            <div>
+                <h3><a href="/page/other/base64.html" target="_blank">Base64</a></h3>
             </div>
-
-
         </div>
+
     </div>
 </div>
 

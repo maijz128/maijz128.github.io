@@ -30,7 +30,7 @@ const _TE_ATTR_LIST = {
 {
     const style = document.createElement('style');
     style.type = 'text/css';
-    style.innerHTML = "." + _TE_EL_CLOSING + "{ display:none }";
+    style.innerHTML = "." + _TE_EL_CLOSING + "{ display:none !important; }";
     document.getElementsByTagName('HEAD').item(0).appendChild(style);
 }
 

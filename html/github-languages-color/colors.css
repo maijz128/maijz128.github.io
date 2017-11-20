@@ -22,7 +22,8 @@
 }
 .code-languages{
     color: #586069 !important;
-    margin-bottom: 16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .code-languages table{
     border: 1px #ddd solid !important;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     
 <!-- start head.html -->
     <meta charset="UTF-8">
@@ -17,19 +18,15 @@
     <script src="/html/js/vue.min.js"></script>
 <!-- end head.html -->
 
+    <title>书 - MaiJZ</title>
+    <link rel="stylesheet" href="pinned-book-item.css">
 
-    <title>MaiJZ - Git 使用笔记</title>
-
-    <!-- start markdown-->
-    <link rel="stylesheet" href="/html/css/github-markdown.css">
-    <!--<link rel="stylesheet" href="/html/css/markedstyle-github.css">-->
-
-    <link rel="stylesheet" href="/html/lib/prism/prism.css">
-    <script src="/html/lib/prism/prism.js"></script>
-    <!-- end markdown-->
+    <link rel="stylesheet" href="index.css">
 
     <script src="/html/js/simple-tabs.js"></script>
 
+    <script src="/page/book/books.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
 <!-- start header.html -->
@@ -143,110 +140,61 @@
         <div class="col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
+            <div id="books-container">
 
-            <div class=".markdown-body">
-                <h1 id="git-">Git 使用笔记</h1>
-<h3 id="-">查看配置</h3>
-<pre><code>git config --list  
-</code></pre><h3 id="-">添加远程仓库</h3>
-<pre><code class="lang-git"> git remote add origin git://github.com/maijz/test-git.git
-</code></pre>
-<h3 id="-">配置用户名和密码</h3>
-<p>当你安装Git后首先要做的事情是设置你的用户名称和e-mail地址。这是非常重要的，因为每次Git提交都会使用该信息。它被永远的嵌入到了你的提交中：</p>
-<pre><code class="lang-git">git config --global user.name &quot;maijz&quot;  
-git config --global user.email maijz@mail.com 
-git config --global user.mail &quot;maijz@mail.com&quot;
-</code></pre>
-<h3 id="-">强制删除提交到远程版本库的数据与版本记录</h3>
-<pre><code class="lang-git">git reset --hard HEAD~2                   # 取消当前版本之前的两次提交
-git push origin HEAD --force              # 强制提交到远程版本库，从而删除之前的两次提交数据
-</code></pre>
-<h3 id="-github-">删除github上的一个项目的内容，重新提交所有内容</h3>
-<pre><code class="lang-git">git rm -r --cached .
-git add .
-git commit -m &quot;.gitignore is now working&quot;
-</code></pre>
-<h3 id="-">创建新的空白分支</h3>
-<pre><code class="lang-git">git checkout --orphan gh-pages
-# 创建一个orphan的分支，这个分支是独立的
+                <div class="books-category" v-for="(categoryObj,  categoryIndex) in json">
+                    <h3 class="f4 mb-2 text-normal band">
+                        <span class="in-band">{{ categoryObj.category }}</span>
+                        <span class="out-of-band">
+                            <span>
+                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
+                                  v-bind:te-closing="categoryObj.closing"
+                                  href="JavaScript:;" title="toggle list">
+                                   <span class="inner toggle-el-show-hint">[−]</span>
+                                   <span class="inner toggle-el-hide-hint">[+]</span>
+                               </a>
+                            </span>
+                        </span>
+                    </h3>
 
-git rm -rf .
-# 删除原来代码树下的所有文件
+                    <ol class="pinned-books-list" v-bind:id="'category' + categoryIndex">
 
-# 注意这个时候你用git branch命令是看不见当前分支的名字的，除非你进行了第一次commit。
+                        <li class="pinned-book-item" v-for="book in categoryObj.books">
+                            <div class="pinned-book-item-content">
+                                <span class="d-block position-relative">
+                                    <a v-bind:href="getDoubanURL(book)" class="text-bold">
+                                        <span v-bind:title="book.name">{{ book.name }}</span>
+                                    </a>
+                                </span>
 
-git push origin gh-pages
-# 在commit操作之后，你就可以用git branch命令看到新分支的名字了，然后push到远程仓库。
-</code></pre>
-<h3 id="-">推送本地到远程分支</h3>
-<pre><code class="lang-git">git push origin 本地分支名:远程分支名
-</code></pre>
-<h3 id="-">新建远程分支，从当前分支</h3>
-<pre><code class="lang-git">git push origin master:dev
-</code></pre>
-<h3 id="-">新建本地分支，从远程分支并建立映射关系</h3>
-<pre><code class="lang-git">git checkout -b 本地分支名 origin/远程分支名
-</code></pre>
-<h3 id="-">新建本地分支，从远程分支但不会建立映射关系</h3>
-<pre><code class="lang-git">git fetch origin 远程分支名:本地分支名
-</code></pre>
-<h3 id="-">删除本地分支</h3>
-<pre><code class="lang-git">git branch -D 本地分支名
-</code></pre>
-<h3 id="-git-">删除git远程分支</h3>
-<pre><code class="lang-git"># 本地仓库 执行 
-git push origin  :{远程分支名}
-# 意思是将本地空分支推送到远程分支，相当于删除远程分支
-</code></pre>
-<h3 id="-">删除本地标签</h3>
-<pre><code class="lang-git">git tag -d 标签名
-</code></pre>
-<h3 id="-">删除远程标签</h3>
-<pre><code class="lang-git">git push origin :refs/tags/标签名
-</code></pre>
-<h3 id="git-pull-">Git pull 强制覆盖本地文件</h3>
-<pre><code class="lang-git">git fetch --all  
-git reset --hard origin/master 
-git pull
-</code></pre>
-<p>​    </p>
-<h3 id="-">强制推送代码</h3>
-<pre><code class="lang-git">git push -f
-</code></pre>
-<h3 id="git-fetch-">Git fetch 的简单用法:</h3>
-<h5 id="-">更新远程代码到本地仓库</h5>
-<pre><code class="lang-git"># 从远程的origin仓库的master分支下载到本地并新建一个分支temp
-git fetch origin master:temp
+                                <p class="name-original">
+                                    {{ book.name_original }}
+                                </p>
+                                <p class="pinned-desc text-gray text-small d-block mt-2 mb-3">
+                                    {{ book.bio }}</p>
 
-# 比较本地的仓库和远程参考的区别
-git diff temp
+                                <p class="mb-0 f6 text-gray">
+                                    PViews: {{ book.pviews }}
 
-# 合并temp分支到master分支
-git merge temp
-</code></pre>
-<h3 id="-">代理设置</h3>
-<pre><code class="lang-git">git config --global http.proxy &#39;socks5://127.0.0.1:1080&#39;
+                                    <a title="douban" class="pinned-meta muted-link"
+                                       v-bind:href="getDoubanURL(book)"
+                                       v-show="book.links.douban">
+                                        <svg class="octicon" height="16" role="img"
+                                             version="1.1" viewBox="0 0 16 16" width="16">
+                                            <use xlink:href="#svg-douban"></use>
+                                        </svg>
+                                    </a>
 
-git config --global https.proxy &#39;socks5://127.0.0.1:1080&#39;
-
-git config --global http.sslverify false
-</code></pre>
-<h2 id="-">别名</h2>
-<p>只需要敲一行命令，告诉Git，以后<code>st</code>就表示<code>status</code>：</p>
-<pre><code class="lang-git"> git config --global alias.st status
-</code></pre>
-<p>当然还有别的命令可以简写，很多人都用co表示checkout，ci表示commit，br表示branch：</p>
-<pre><code class="lang-git"> git config --global alias.co checkout
- git config --global alias.ci commit
- git config --global alias.br branch
- git config --global alias.logl log -list
-</code></pre>
+                                </p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
             </div>
-
-
         </div>
     </div>
 </div>
+
 
 
 <!-- start footer.html -->
@@ -279,5 +227,28 @@ git config --global http.sslverify false
 </footer>
 
 <!-- end footer.html-->
+
+<div style="display: none;">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="svg-douban" viewBox="0 0 256 256">
+            <g id="Background_1_" style="enable-background:new    ;">
+                <g id="Background">
+                    <g>
+                        <path d="M249.422,30.68c-2.722-4.986-5.816-9.537-9.794-13.521     c-3.991-3.998-8.708-7.587-13.702-10.314c-8.381-4.576-18.789-6.856-29.002-6.856H59.075c-10.444,0-20.542,2.345-29.265,6.949     c-5.022,2.65-9.588,6.146-13.503,10.126c-3.932,3.998-7.491,8.488-10.046,13.572c-4.289,8.533-6.274,18.478-6.274,28.65v137.43     c0,10.326,1.671,20.678,6.296,29.134c2.68,4.9,6.191,9.861,10.087,13.794c3.934,3.971,8.583,7.226,13.502,9.956     c8.465,4.7,18.842,6.413,29.202,6.413h137.849c10.568,0,20.398-1.523,28.982-6.401c4.739-2.692,9.879-6.113,13.687-9.966     c3.923-3.969,7.2-8.851,9.886-13.798c4.566-8.416,6.533-18.875,6.533-29.132V59.285C256.012,48.978,254.031,39.124,249.422,30.68     z"
+                              style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;"/>
+                    </g>
+                </g>
+            </g>
+            <g id="Shape_1_1_" style="enable-background:new    ;">
+                <g id="Shape_1">
+                    <g>
+                        <path d="M204.508,49.25H51.492v18.549h153.016V49.25z      M167.393,188.201l9.441-32.541h18.232c0,0,0-49.249,0-73.869H60.933c0,24.62,0,73.869,0,73.869h17.906l9.767,32.541     c0,0-27.783,0-41.673,0v18.549h162.133v-18.549C195.176,188.201,167.393,188.201,167.393,188.201z M84.048,137.111V100.34h87.903     v36.771H84.048z M148.51,187.876h-41.021l-9.767-32.216h60.23L148.51,187.876z"
+                              style="fill-rule:evenodd;clip-rule:evenodd;fill:#228A31;"/>
+                    </g>
+                </g>
+            </g>
+        </symbol>
+    </svg>
+</div>
 </body>
 </html>
