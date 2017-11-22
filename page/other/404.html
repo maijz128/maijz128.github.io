@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
     <link rel="stylesheet" href="/html/css/base.css">
 
+    <script src="/html/lib/jquery-3.2.1.min.js"></script>
+    <script src="/html/js/vue.min.js"></script>
+
     <script src="/html/js/tool.js"></script>
     <script src="/html/js/toggle-element.js"></script>
-    <script src="/html/js/vue.min.js"></script>
 <!-- end head.html -->
 
     <title>404 - MaiJZ</title>
@@ -124,30 +126,41 @@
     </div>
 </div>
 
-
 <!-- start footer.html -->
 <style>
     .site-footer {
-        margin-top: 30px; overflow: hidden;
         background-color: #222;  color: white;
-        min-height: 50px;  font-size: 14px;
-        padding: 1em;  letter-spacing: 1px;
+        min-height: 50px;   margin-top: 30px; overflow: hidden;
+        font-size: 14px;  padding: 1em;  letter-spacing: 1px;
     }
-
-    .site-info {
-        text-align: center;  margin-right: -15px;  margin-left: -15px;
-    }
-    .site-info a:hover{
-        color: #78909c;  text-decoration: none;
-    }
+    .site-info {  text-align: center;  margin-right: -15px;  margin-left: -15px;  }
+    .site-info a:hover{  color: #78909c;  text-decoration: none;  }
+    /* 动态为footer添加类fixed-bottom */
+    .fixed-bottom {position: fixed;bottom: 0;width:100%;}
 </style>
-<footer class="site-footer">
+<script>
+    $(function(){
+        function footerPosition(){
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
+<footer class="site-footer" id="footer">
     <div class="site-info">
         MaiJZ © 2017<span class="sep"> | </span>
         Powered by <a href="https://github.com/maijz128/shpnode">SHPNode</a>
     </div>
 </footer>
-
 <!-- end footer.html-->
 </body>
 </html>
