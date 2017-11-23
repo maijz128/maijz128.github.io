@@ -20,14 +20,13 @@
     </style>
 <!-- end head.html -->
 
-    <title>我的电影 - MaiJZ</title>
+    <title>类的组织 - MaiJZ</title>
 
-    <script src="/html/lib/vue.min.js"></script>
-    <script src="/html/js/toggle-element.js"></script>
-
-    <link rel="stylesheet" href="index.css">
-    <script src="/page/fun/movie/movies.js"></script>
-    <script src="index.js"></script>
+    <!-- start markdown-->
+    <link rel="stylesheet" href="/html/css/github-markdown.css">
+    <link rel="stylesheet" href="/html/lib/prism/prism.css">
+    <script src="/html/lib/prism/prism.js"></script>
+    <!-- end markdown-->
 
 </head>
 <body>
@@ -129,52 +128,42 @@
         <div class="col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
-            <div id="movies-container">
-                <div class="category" v-for="(categoryObj,  categoryIndex) in json">
-                    <h3 class="f4 mb-2 text-normal band">
-                        <span class="in-band">{{ categoryObj.category }}</span>
-                        <span class="out-of-band">
-                            <span>
-                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
-                                  v-bind:te-closing="categoryObj.closing"
-                                  href="JavaScript:;" title="toggle list">
-                                   <span class="inner toggle-el-show-hint">[−]</span>
-                                   <span class="inner toggle-el-hide-hint">[+]</span>
-                               </a>
-                            </span>
-                        </span>
-                    </h3>
+            <div class="markdown-body">
+                <h1 id="-">类的组织</h1>
+<h2 id="java">Java</h2>
+<h3 id="-">顺序：</h3>
+<ol>
+<li><p>公有静态变量</p>
+</li>
+<li><p>私有静态变量</p>
+</li>
+<li><p>公有变量</p>
+</li>
+<li><p>私有变量</p>
+</li>
+<li><p>公有函数</p>
+</li>
+<li><p>私有函数</p>
+</li>
+</ol>
+<p>例：</p>
+<pre><code class="lang-java">public class Obj{
+  public static int VALUE1;
+  private static int VALUE2;
+  public int value3;
+  private int value4;
 
-                    <ol class="pinned-movies-list list-style-none" v-bind:id="'category' + categoryIndex">
-                        <li class="pinned-movie-item" v-for="movie in categoryObj.movies">
-                            <p>
-                                <a class="movie-link" href="javascript:void(0);"
-                                   v-on:click="profile(movie)">
-                                    <span class="movie-name">{{movie.name}}</span>
-                                </a>
-                                <span class="float-right">
-                                    <a class="movie-link" title="电驴链接" target="_blank"
-                                       v-if="movie.links.ed2k" v-bind:href="movie.links.ed2k">电驴</a>
-                                    <a class="movie-link" title="磁力链接" target="_blank"
-                                       v-if="movie.links.magnet" v-bind:href="movie.links.magnet">磁力</a>
-                                    <a class="movie-link" title="迅雷下载" target="_blank"
-                                       v-if="movie.links.thunder" v-bind:href="movie.links.thunder">迅雷</a>
-                                    <a class="movie-link" title="QQ旋风下载" target="_blank"
-                                       v-if="movie.links.qqdl" v-bind:href="movie.links.qqdl">旋风</a>
-                                    <a class="movie-link" title="ftp" target="_blank"
-                                       v-if="movie.links.ftp" v-bind:href="movie.links.qqdl">FTP</a>
-                                    <a class="movie-link" title="http" target="_blank"
-                                       v-if="movie.links.http" v-bind:href="movie.links.qqdl">HTTP</a>
-                                </span>
-                            </p>
-                        </li>
-                    </ol>
-                </div>
+  public Obj(){}
+  public void method1(){}
+  private void method2(){}
+}
+</code></pre>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
+
 <!-- start footer.html -->
 <style>
     .site-footer {
