@@ -156,3 +156,9 @@
     vertical-align: text-top;
     fill: currentColor;
 }
+
+.pinned-book-item .book-pic{
+    text-align: center;
+    margin: 0 12px 0 0;
+    max-width: 155px;
+}

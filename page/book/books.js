@@ -16,16 +16,18 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "1024570"
-                }
+                },
+                "image": "s26535990.jpg"
             },
             {
                 "name": "计算机图形学",
-                "name_original": "",
+                "name_original": "Computer Graphics with OpenGL",
                 "bio": "选读",
                 "pviews": "1",
                 "links": {
                     "douban": "1156818"
-                }
+                },
+                "image": "s1220937.jpg"
             }
         ]
     },
@@ -40,7 +42,8 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "4262627"
-                }
+                },
+                "image": "s4157180.jpg"
             },
             {
                 "name": "编写可读代码的艺术",
@@ -49,7 +52,8 @@ const Data_Books = [
                 "pviews": "2",
                 "links": {
                     "douban": "10797189"
-                }
+                },
+                "image": "s10328621.jpg"
             },
             {
                 "name": ".NET设计规范：约定、惯用法与模式",
@@ -58,7 +62,8 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "4805165"
-                }
+                },
+                "image": "s4330228.jpg"
             }
         ]
     },
@@ -73,7 +78,8 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "1052241"
-                }
+                },
+                "image": "s1074361.jpg"
             },
             {
                 "name": "敏捷软件开发：原则、模式与实践",
@@ -82,7 +88,8 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "1140457"
-                }
+                },
+                "image": "s1671095.jpg"
             }
         ]
     },
@@ -97,7 +104,8 @@ const Data_Books = [
                 "pviews": "1",
                 "links": {
                     "douban": "25708312"
-                }
+                },
+                "image": "s27023182.jpg"
             }
         ]
     },
@@ -111,8 +119,9 @@ const Data_Books = [
                 "bio": "趣味入门",
                 "pviews": "1",
                 "links": {
-                    "douban": ""
-                }
+                    "douban": "25894685"
+                },
+                "image": "s27345094.jpg"
             }
         ]
     }

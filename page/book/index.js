@@ -4,8 +4,6 @@
  * Github: https://github.com/maijz128
  */
 
-const URL_BOOKS = "books.json";
-
 
 if (!_g) var _g = {};
 
@@ -26,7 +24,8 @@ function Books() {
                     "pviews": "1",
                     "links": {
                         "douban": "https://book.douban.com/subject/4262627/"
-                    }
+                    },
+                    "image": ""
                 }
             ]
         }]
@@ -41,16 +40,16 @@ function Books() {
                 } else {
                     return "javascript:void(0);";
                 }
+            },
+            getPictureURL: function (book) {
+                if (book.image) {
+                    return "/html/img/book/" + book.image;
+                } else {
+                    return "";
+                }
             }
         }
     });
 
     self.appData.json = Data_Books;
-
-    //
-    // fetch(URL_BOOKS).then(function (response) {
-    //     return response.json();
-    // }).then(function (json) {
-    //     self.appData.json = json;
-    // });
 }
