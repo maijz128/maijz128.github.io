@@ -56,6 +56,16 @@ const Data_Books = [
                 "image": "s10328621.jpg"
             },
             {
+                "name": "代码整洁之道",
+                "name_original": "Clean Code: A Handbook of Agile Software Craftsmanship",
+                "bio": "必读",
+                "pviews": "1",
+                "links": {
+                    "douban": "4199741"
+                },
+                "image": "s4103991.jpg"
+            },
+            {
                 "name": ".NET设计规范：约定、惯用法与模式",
                 "name_original": "Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries (2nd Edition)",
                 "bio": "推荐",
