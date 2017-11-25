@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+<!-- start head.html -->
+    <meta charset="UTF-8">
+    <meta content="origin-when-cross-origin" name="referrer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="fluid-icon" href="/html/img/fluidicon.jpg" title="MaiJZ">
+    <link rel="icon" type="image/x-icon" href="/html/img/favicon.ico">
+
+    <link rel="stylesheet" href="/html/css/maijz-frameworks.css">
+
+    <script src="/html/lib/jquery-3.2.1.min.js"></script>
+    <script src="/html/js/tool.js"></script>
+
+    <style>
+        .maincontent{  min-height: 550px;  }
+    </style>
+<!-- end head.html -->
+
+
+    <title>重构-改善既有代码的设计 - MaiJZ</title>
+
+    <!-- start markdown-->
+    <link rel="stylesheet" href="/html/css/github-markdown.css">
+    <link rel="stylesheet" href="/html/lib/prism/prism.css">
+    <script src="/html/lib/prism/prism.js"></script>
+    <!-- end markdown-->
+
+
+</head>
+<body>
+<!-- start header.html -->
+<div class="position-relative">
+    <div id="header-content" class="header-body">
+        <link rel="stylesheet" href="/html/css/header.css">
+
+        <div id="header" class="header" role="banner">
+            <div class="container clearfix">
+                <a aria-label="GitHub" class="header-logo-invertocat" target="_top"
+                   href="https://github.com/maijz128">
+                    <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                        <use xlink:href="#svg-github"/>
+                    </svg>
+                </a>
+                <a aria-label="Twitter" class="header-logo-invertocat" target="_top"
+                   href="https://twitter.com/maijz128">
+                    <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                        <use xlink:href="#svg-twitter"/>
+                    </svg>
+                </a>
+                <a aria-label="Email" class="header-logo-invertocat" target="_top"
+                   href="mailto:maijz128@gmail.com">
+                    <svg aria-hidden="true" class="octicon" height="32" version="1.1" viewBox="0 0 16 16" width="32">
+                        <use xlink:href="#svg-email"/>
+                    </svg>
+                </a>
+
+                <ul class="header-nav float-right st-nav-tabs" role="navigation">
+                    <li class="header-nav-item">
+                        <a class="header-nav-link" href="/" target="_top">Profile</a></li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link " href="/page/book/" target="_top">Book</a></li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link " href="/page/note/" target="_top">Note</a></li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link" href="/page/coder/" target="_top">Coder</a></li>
+                    <li class="header-nav-item">
+                        <a class="header-nav-link" href="/page/game/" target="_top">Game</a></li>
+
+                    <li class="header-nav-item dropdown  nav-item">
+                        <a class="header-nav-link" href="javascript:void(0);">More</a>
+                        <div class="dropdown-menu-content sub-items dropdown-menu-sw">
+                            <div class="dropdown-menu dropdown-menu-sw">
+                                <!--<div class="dropdown-divider"></div>-->
+                                <a class="dropdown-item" href="/page/soft/">Soft</a>
+                                <a class="dropdown-item" href="/page/fun/">Fun</a>
+                                <a class="dropdown-item" href="/page/other/">Other</a>
+                                <!--<div class="dropdown-divider"></div>-->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="display: none;">
+            
+<svg style="display: none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+    <symbol id="svg-email" viewBox="0 0 14 16">
+        <g>
+            <path fill-rule="evenodd"
+                  d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path>
+        </g>
+    </symbol>
+
+    <symbol id="svg-github" viewBox="0 0 16 16">
+        <g id="github" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+        </g>
+    </symbol>
+
+    <symbol id="svg-twitter" viewBox="0 0 32 32">
+        <g id="twitter-home_1_">
+            <circle fill="#00acee" cx="16" cy="16" r="16"/>
+            <g>
+                <path fill="white" d="M25.753,9.549c-0.736,0.327-1.527,0.548-2.357,0.647c0.847-0.508,1.498-1.312,1.804-2.271
+          c-0.793,0.47-1.671,0.812-2.606,0.996C21.846,8.124,20.78,7.626,19.6,7.626c-2.266,0-4.103,1.837-4.103,4.103
+          c0,0.322,0.036,0.635,0.106,0.935c-3.41-0.171-6.433-1.805-8.458-4.288C6.792,8.983,6.59,9.687,6.59,10.44
+          c0,1.423,0.724,2.679,1.826,3.415c-0.673-0.021-1.305-0.206-1.859-0.513c0,0.017,0,0.035,0,0.052c0,1.988,1.414,3.646,3.292,4.023
+          c-0.345,0.094-0.707,0.144-1.081,0.144c-0.264,0-0.522-0.026-0.772-0.074c0.522,1.63,2.038,2.816,3.833,2.85
+          c-1.404,1.1-3.174,1.756-5.096,1.756c-0.331,0-0.658-0.019-0.979-0.057c1.816,1.164,3.973,1.843,6.29,1.843
+          c7.547,0,11.675-6.252,11.675-11.675c0-0.178-0.004-0.355-0.012-0.531C24.507,11.095,25.203,10.373,25.753,9.549z"/>
+            </g>
+        </g>
+    </symbol>
+
+</svg>
+        </div>
+    </div>
+</div>
+<!-- end header.html -->
+
+<div role="main" class="maincontent">
+    <div class="container-lg clearfix px-3 mt-4">
+        <div class="col-3 float-left pr-3"></div>
+
+        <div class="col-9 float-left pl-2">
+
+            <div class="markdown-body">
+                <h1 id="-">重构-改善既有代码的设计</h1>
+<p>重构的基本定义：重构是<strong>在不改变软件可观察行为的前提下，改善其内部结构。</strong></p>
+<p>重构（名词）：对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高其可理解性，降低其修改成本。</p>
+<p>重构（动词）：使用一系列重构手法，在不改变软件可观察行为的前提下，调整其结构。</p>
+<h2 id="-">重构步骤</h2>
+<h3 id="1-">1. 测试</h3>
+<blockquote>
+<p>重构之前，首先检查自己是否有一套可靠的测试机制，这些测试必须有自我检验能力。</p>
+</blockquote>
+<h2 id="-">重构原则</h2>
+<h2 id="-">何时重构</h2>
+<blockquote>
+<p>如果你发现自己需要为程序添加一个特性，而代码结构使你无法很方便地达成目的，</p>
+<p>那就先重构那个程序，使特性的添加比较容易进行，然后再添加特性。</p>
+</blockquote>
+<ol>
+<li>添加功能时重构</li>
+<li>修补错误时重构</li>
+<li>审复代码时重构</li>
+</ol>
+<h2 id="-">程序的坏味道</h2>
+<ol>
+<li><p>Duplicated Code（重复代码）</p>
+</li>
+<li><p>Long Method（过长函数）</p>
+</li>
+<li><p>Large Class（过大的类）</p>
+</li>
+<li><p>Long Parameter List（过长参数列）</p>
+</li>
+<li><p>Divergent Change（发散式变化： 一个类受多种变化的影响）</p>
+<p>如果某个类经常因为不同的原因在不同的方向上发生变化，Divergent Change就出现了。</p>
+</li>
+<li><p>Shotgun Surgery（霰弹式修改：一种变化引发多个类相应修改）</p>
+<p>如果每遇到某种变化，都必须在许多不同的类内做出许多小修改，这就是Shotgun Surgery。</p>
+</li>
+<li><p>Feature Envy（依恋情结）</p>
+<p>某函数过多的调用、依赖于另一对象的函数。</p>
+</li>
+<li><p>Data Clumps（数据泥团）</p>
+<p>常常在很多地方出现相同的三四项数据：两个类中相同的字段、许多函数签名中相同的参数。</p>
+<p>这些总是绑在一起出现的数据应该拥有属于它们自己的对象。</p>
+</li>
+<li><p>Primitive Obsession（基本类型偏执）</p>
+<p>不愿意在小任务上运用小对象——像是结合数值和币种的money类、由一个起始值和一个结束值组成的range类、电话号码或邮政编码（ZIP）等等。</p>
+</li>
+<li><p>Switch Statements（<code>switch</code> 惊悚现身）</p>
+<p>大多数时候，一看到 <code>switch</code> 语句，你就应该考虑以多态来替换它。</p>
+</li>
+<li><p>Parallel Inheritance Hierarchies（平行继承体系）</p>
+<p>每当为某个类增加一个子类，必须也为另一个类相应增加一个子类。</p>
+</li>
+<li><p>Lazy Class（冗赘类）</p>
+<p>如果一个类的所得不值其身价，它就应该消失。项目中经常会出现这样的情况：某个类原来对得起自己的身价，但重构使它身形缩水，不再做那么多工作；或开发者事前规划了某些变化，并添加一个类来应付这些变化，但变化实际上没有发生。</p>
+</li>
+<li><p>Speculative Generality（夸夸其谈未来性）</p>
+<p>当有人说“噢，我想我们总有一天需要做这事”，并因而企图以各式各样的钩子和特殊情况来处理一些非必要的事情，这种坏味道就出现了。</p>
+</li>
+<li><p>Temporary Field（令人迷惑的暂时字段）</p>
+</li>
+<li><p>Message Chains（过度耦合的消息链）</p>
+</li>
+<li><p>Middle Man（中间人）</p>
+</li>
+<li><p>Inappropriate Intimacy（狎昵关系）</p>
+</li>
+<li><p>Alternative Classes with Different Interfaces（异曲同工的类）</p>
+</li>
+<li><p>Incomplete Library Class（不完美的库类）</p>
+</li>
+<li><p>Data Class（幼稚的数据类）</p>
+</li>
+<li><p>Refused Bequest（被拒绝的遗赠）</p>
+</li>
+<li><p>Comments（过多的注释）</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>烂程序</th>
+<th>我们希望的程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>难以阅读的程序，难以修改</td>
+<td>容易阅读</td>
+</tr>
+<tr>
+<td>逻辑重复的程序，难以修改</td>
+<td>所有逻辑都只在唯一地点指定</td>
+</tr>
+<tr>
+<td>添加新行为时需要修改已有代码的程序，难以修改</td>
+<td>新的改动不会危及现有行为</td>
+</tr>
+<tr>
+<td>带复杂条件逻辑的程序，难以修改</td>
+<td>尽可能简单表达条件逻辑</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-">构筑测试体系</h2>
+<blockquote>
+<p> 确保所有测试都完全自动化，让它们检查自己的测试结果。</p>
+<p>一套测试就是一个强大的bug侦测器，能够大大缩减查找bug所需要的时间。</p>
+<p>编写未完善的测试并实际运行，好过对完美测试的无尽等待。</p>
+<p>考虑可能出错的边界条件，把测试火力集中在那儿。</p>
+<p>当事件被认为应该会出错时，别忘了检查是否抛出了预期的异常。</p>
+<p>不要因为测试无法捕捉所有bug就不写测试，因为测试的确可以捕捉到大多数bug。</p>
+</blockquote>
+<h2 id="-">重构列表</h2>
+<blockquote>
+<p>重构的基本技巧——小步前进、频繁测试</p>
+</blockquote>
+<p><strong>重构的记录格式</strong></p>
+<ul>
+<li><p>名称（name）</p>
+</li>
+<li><p>概要（summary）</p>
+</li>
+<li><p>动机（motivation）</p>
+</li>
+<li><p>做法（mechanics）</p>
+</li>
+<li><p>范例（example）</p>
+<p>​</p>
+</li>
+</ul>
+<h2 id="-">重新组织函数</h2>
+<h4 id="1-extract-method-">1. Extract Method（提炼函数）</h4>
+<blockquote>
+<p>你有一段代码可以被组织在一起并独立出来。</p>
+</blockquote>
+<p>使用率：★★★★★</p>
+<h4 id="2-inline-method-">2. Inline Method（内联函数）</h4>
+<blockquote>
+<p>一个函数的本体与名称同样清楚易懂。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h4 id="3-inline-temp-">3. Inline Temp（内联临时变量）</h4>
+<blockquote>
+<p>你有一个临时变量，只被一个简单表达式赋值一次，而它妨碍了其他重构手法。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h4 id="4-replace-temp-with-query-">4. Replace Temp with Query（以查询取代临时变量）</h4>
+<blockquote>
+<p>你的程序以一个临时变量保存某一表达式的运算结果。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h4 id="5-introduce-explaining-variable-">5. Introduce Explaining Variable（引入解释性变量）</h4>
+<blockquote>
+<p>你有一个复制的表达式。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h4 id="6-split-temporary-variable-">6. Split Temporary Variable（分解临时变量）</h4>
+<blockquote>
+<p>你的程序有某个临时变量被赋值超过一次，它既不是循环变量，也不被用于收集计算结果。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h4 id="7-remove-assignments-to-parameters-">7. Remove Assignments to Parameters（移除对参数的赋值）</h4>
+<blockquote>
+<p>代码对一个参数进行赋值。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h4 id="8-replace-method-with-method-object-">8. Replace Method with Method Object（以函数对象取代函数）</h4>
+<blockquote>
+<p>你有一个大型函数，其中对局部变量的使用使你无法采用Extract Method（提炼函数）。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h4 id="9-substitute-algorithm-">9. Substitute Algorithm（替换算法）</h4>
+<blockquote>
+<p>你想要把某个算法替换为另一个更清晰的算法。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h2 id="-">在对象之间搬移特性</h2>
+<h3 id="1-move-method-">1. Move Method（搬移函数）</h3>
+<blockquote>
+<p>你的程序中，有个函数与其所驻类之外的另一个类进行更多交流：调用后者，或被后者调用。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="2-move-field-">2.  Move Field（搬移字段）</h3>
+<blockquote>
+<p>你的程序中，某个字段被其所驻类之外的另一个类更多地用到。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="3-extract-class-">3. Extract Class（提炼类）</h3>
+<blockquote>
+<p>某个类做了应该由两个类做的事。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="4-inline-class-">4. Inline Class（将类内联化）</h3>
+<blockquote>
+<p>某个类没有做太多事情。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="5-hide-delegate-">5. Hide Delegate（隐藏“委托关系”）</h3>
+<blockquote>
+<p>客户通过一个委托类来调用另一个对象。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="6-remove-middle-man-">6. Remove Middle Man（移除中间人）</h3>
+<blockquote>
+<p>某个类做了过多的简单委托动作。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="7-introduce-foreign-method-">7. Introduce Foreign Method（引入外加函数）</h3>
+<blockquote>
+<p>你需要为提供服务的类增加一个函数，但你无法修改这个类。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="8-introduce-local-extension-">8. Introduce Local Extension（引入本地扩展）</h3>
+<blockquote>
+<p>你需要为服务类提供一些额外函数，但你无法修改这个类。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h2 id="-">重新组织数据</h2>
+<h3 id="1-self-encapsulate-field-">1. Self Encapsulate Field（自封装字段）</h3>
+<blockquote>
+<p>你直接访问一个字段，但与字段之间的耦合关系逐渐变得笨拙。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="2-replace-data-value-with-object-">2. Replace Data Value with Object（以对象取代数据值）</h3>
+<blockquote>
+<p>你有一个数据项，需要与其他数据和行为一起使用才有意义。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="3-change-value-to-reference-">3. Change Value to Reference（将值对象改为引用对象）</h3>
+<blockquote>
+<p>你从一个类衍生出许多彼此相等的实例，希望将它们替换为同一个对象。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="4-change-reference-to-value-">4. Change Reference to Value（将引用对象改为值对象）</h3>
+<blockquote>
+<p>你有一个引用对象，很小且不可变，而且不易管理。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="5-replace-array-with-object-">5. Replace Array with Object（以对象取代数组）</h3>
+<blockquote>
+<p>你有一个数组，其中的元素各自代表不同的东西。</p>
+</blockquote>
+<p>使用率：★☆☆☆☆</p>
+<h3 id="6-duplicate-observed-data-">6. Duplicate Observed Data（复制“被监视数据”）</h3>
+<blockquote>
+<p>你有一些领域数据置身于GUI控件中，而领域函数需要访问这些数据。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="7-change-unidirectional-association-to-bidirectional-">7. Change Unidirectional Association to Bidirectional（将单向关联改为双向关联）</h3>
+<blockquote>
+<p>两个类都需要使用对方特性，但其间只有一条单向连接。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="8-change-bidirectional-association-to-unidirectional-">8. Change Bidirectional Association to Unidirectional（将双向关联改为单向关联）</h3>
+<blockquote>
+<p>两个类之间有双向关联，但其中一个类如今不再需要另一个类的特效。</p>
+</blockquote>
+<p>使用率：★☆☆☆☆</p>
+<h3 id="9-replace-magic-number-with-symbolic-constant-">9. Replace Magic Number with Symbolic Constant（以字面常量取代魔法数）</h3>
+<blockquote>
+<p>你有一个字面数值，带有特别含义。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="10-encapsulate-field-">10. Encapsulate Field（封装字段）</h3>
+<blockquote>
+<p>你的类中存在一个public字段。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="11-encapsulate-collection-">11. Encapsulate  Collection（封装集合）</h3>
+<blockquote>
+<p>有个函数返回一个集合。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="12-replace-record-with-data-class-">12. Replace Record with Data Class（以数据类取代记录）</h3>
+<blockquote>
+<p>你需要面对传统编程环境中的记录结构。</p>
+</blockquote>
+<p>使用率：★☆☆☆☆</p>
+<h3 id="13-replace-type-code-with-class-">13. Replace Type Code with Class（以类取代类型码）</h3>
+<blockquote>
+<p>类之中有一个数值类型码，但它并不影响类的行为。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="14-replace-type-code-with-subclasses-">14. Replace Type Code with Subclasses（以子类取代类型码）</h3>
+<blockquote>
+<p>你有一个不可变的类型码，它会影响类的行为。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="15-replace-type-code-with-state-strategy-state-strategy-">15. Replace Type Code with State/Strategy（以State/Strategy取代类型码）</h3>
+<blockquote>
+<p>你有一个类型码，它会影响类的行为，但你无法通过继承手法消除它。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="16-replace-subclass-with-fields-">16. Replace Subclass with Fields（以字段取代子类）</h3>
+<blockquote>
+<p>你的各个子类的唯一差别只在“返回常量数据”的函数身上。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h2 id="-">简化条件表达式</h2>
+<h3 id="1-decompose-conditional-">1. Decompose Conditional（分解条件表达式）</h3>
+<blockquote>
+<p>你有一个复杂的条件（if-then-else）语句。</p>
+</blockquote>
+<p>使用率：★★★★☆</p>
+<h3 id="2-consolidate-conditional-expression-">2. Consolidate Conditional Expression（合并条件表达式）</h3>
+<blockquote>
+<p>你有一系列条件测试，都得到相同结果。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="3-consolidate-duplicate-conditional-fragments-">3. Consolidate  Duplicate Conditional  Fragments（合并重复的条件片段）</h3>
+<blockquote>
+<p>在条件表达式的每个分支上有着相同的一段代码。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="4-remove-control-flag-">4. Remove Control Flag（移除控制标记）</h3>
+<blockquote>
+<p>在一系列布尔表达式 中，某个变量带有“控制标记”（control flag）的作用。</p>
+</blockquote>
+<p>使用率：★☆☆☆☆</p>
+<h3 id="5-replace-nested-conditional-with-guard-clauses-">5. Replace Nested Conditional with Guard Clauses（以卫语句取代嵌套条件表达式）</h3>
+<blockquote>
+<p>函数中的条件逻辑使人难以看清正常的执行路径。</p>
+</blockquote>
+<p>使用率：★★★☆☆</p>
+<h3 id="6-replace-conditional-with-polymorphism-">6. Replace Conditional with Polymorphism（以多态取代条件表达式）</h3>
+<blockquote>
+<p>你手上有个条件表达式，它根据对象类型的不同而选择不同的行为。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="7-introduce-null-object-null-">7. Introduce Null Object（引入Null对象）</h3>
+<blockquote>
+<p>你需要再三检查对象是否为null。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h3 id="8-introduce-assertion-">8. Introduce Assertion（引入断言）</h3>
+<blockquote>
+<p>某一段代码需要对程序状态做出某种假设。</p>
+</blockquote>
+<p>使用率：★★☆☆☆</p>
+<h2 id="-">简化函数调用</h2>
+<h3 id="1-rename-method-">1. Rename Method（函数改名）</h3>
+<blockquote>
+<p>函数的名称未能揭示函数的用途。</p>
+</blockquote>
+<p><strong>修改函数名称。</strong></p>
+<p>​    给函数命名有一个好办法：首先考虑应该给这个函数写上一句怎样的注释，然后想办法将注释变成函数名称。</p>
+<p>使用率：★★★★★</p>
+<h3 id="2-add-parameter-">2. Add Parameter（添加参数）</h3>
+<blockquote>
+<p>某个函数需要从调用端得到更多信息。</p>
+</blockquote>
+<p><strong>为此函数添加一个对象参数，让该对象带进函数所需信息。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h3 id="3-remove-parameter-">3. Remove Parameter（移除参数）</h3>
+<blockquote>
+<p>函数本体不再需要某个参数。</p>
+</blockquote>
+<p><strong>将该参数去除。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h3 id="4-separate-query-from-modifier-">4. Separate Query from Modifier（将查询函数和修改函数分离）</h3>
+<blockquote>
+<p>某个函数既返回对象状态值，又修改对象状态。</p>
+</blockquote>
+<p><strong>建立两个不同的函数，其中一个负责查询，另一个负责修改。</strong></p>
+<p>​    明确“有副作用”与“无副作用”两种函数之间的差异：如何有返回值的函数，都不应该有看得到的副作用。</p>
+<p>使用率：★★★★★</p>
+<h3 id="5-parameterize-method-">5. Parameterize Method（令函数携带参数）</h3>
+<blockquote>
+<p>若干函数做了类似的工作，但在函数本体中却包含了不同的值。</p>
+</blockquote>
+<p><strong>建立单一函数，以参数表达那些不同的值。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="6-replace-parameter-with-explicit-methods-">6. Replace Parameter with Explicit Methods（以明确函数取代参数）</h3>
+<blockquote>
+<p>你有一个函数，其中完全取决于参数值而采取不同行为。</p>
+</blockquote>
+<p><strong>针对该参数的每一个可能值，建立一个独立函数。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="7-preserve-whole-object-">7. Preserve Whole Object（保持对象完整）</h3>
+<blockquote>
+<p>你从某个对象中取出若干值，将它们作为某一次函数调用时的参数。</p>
+</blockquote>
+<p><strong>改为传递整个对象。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="8-replace-parameter-with-methods-">8. Replace Parameter with Methods（以函数取代参数）</h3>
+<blockquote>
+<p>对象调用某个函数，并将所得结果作为参数，传递给另一个函数。而接受该参数的函数本身也能够调用前一个函数。</p>
+</blockquote>
+<p><strong>让参数接受者去除该项参数，并直接调用前一个函数。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h3 id="9-introduce-parameter-object-">9. Introduce Parameter Object（引入参数对象）</h3>
+<blockquote>
+<p>某些参数总是很自然地同时出现。</p>
+</blockquote>
+<p><strong>以一个对象取代这些参数。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h3 id="10-remove-setting-method-">10. Remove Setting Method（移除设值函数）</h3>
+<blockquote>
+<p>类中的某个字段应该在对象创建时被设值，然后就不再改变。</p>
+</blockquote>
+<p><strong>去掉该字段的所有设值函数。</strong></p>
+<p>使用率：★★☆☆☆</p>
+<h3 id="11-hide-method-">11. Hide Method（隐藏函数）</h3>
+<blockquote>
+<p>有一个函数，从来没有被其他任何类用到。</p>
+</blockquote>
+<p><strong>将这个函数修改为private</strong></p>
+<p>使用率：★★☆☆☆</p>
+<h3 id="12-replace-constructor-with-factory-method-">12. Replace Constructor with Factory Method（以工厂函数取代构造函数）</h3>
+<blockquote>
+<p>你希望在创建对象时不仅仅是做简单的构建动作。</p>
+</blockquote>
+<p><strong>将构造函数替换为工厂函数。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h3 id="13-encapsulate-downcast-">13. Encapsulate Downcast（封装向下转型）</h3>
+<blockquote>
+<p>某个函数返回的对象，需要由函数调用者执行向下转型（downcast）。</p>
+</blockquote>
+<p><strong>将向下转型动作移到函数中。</strong></p>
+<p>使用率：★★☆☆☆</p>
+<h3 id="14-replace-error-code-with-exception-">14. Replace Error Code with Exception（以异常取代错误码）</h3>
+<blockquote>
+<p>某个函数返回一个特定的代码，用以表示某种错误情况。</p>
+</blockquote>
+<p><strong>改为异常。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="15-replace-exception-with-test-">15. Replace Exception with Test（以测试取代异常）</h3>
+<blockquote>
+<p>面对一个调用者可以预先检查的条件，你抛出了一个异常。</p>
+</blockquote>
+<p><strong>修改调用者，使它在调用函数之前先做检查。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h2 id="-">处理概括关系</h2>
+<h3 id="1-pull-up-field-">1. Pull Up Field（字段上移）</h3>
+<blockquote>
+<p>两个子类拥有相同的字段。</p>
+</blockquote>
+<p><strong>将该字段移至超类。</strong></p>
+<p>使用率：★★★★★</p>
+<h3 id="2-pull-up-method-">2. Pull Up Method（函数上移）</h3>
+<blockquote>
+<p>有些函数，在各个子类中产生完全相同的结果。</p>
+</blockquote>
+<p><strong>将该函数移至超类。</strong></p>
+<p>使用率：★★★★★</p>
+<h3 id="3-pull-up-constructor-body-">3. Pull Up Constructor Body（构造函数本体上移）</h3>
+<blockquote>
+<p>你在各个子类中拥有一些构造函数，它们的本体几乎完全一致。</p>
+</blockquote>
+<p><strong>在超类中新建一个构造函数，并在子类构造函数中调用它。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="4-push-down-method-">4. Push Down Method（函数下移）</h3>
+<blockquote>
+<p>超类中的某个函数只与部分（而非全部）子类有关。</p>
+</blockquote>
+<p><strong>将这个函数移到相关的那些子类去。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="5-push-down-field-">5. Push Down Field（字段下移）</h3>
+<blockquote>
+<p>超类中的某个字段只被部分（而非全部）子类用到。</p>
+</blockquote>
+<p><strong>将这个字段移到需要它的那些子类去。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="6-extract-subclass-">6. Extract Subclass（提炼子类）</h3>
+<blockquote>
+<p>类中的某些特性只被某些（而非全部）实例用到。</p>
+</blockquote>
+<p><strong>新建一个子类，将上面所说的那一部分特性移到子类中。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="7-extract-superclass-">7. Extract Superclass（提炼超类）</h3>
+<blockquote>
+<p>两个类有相似特性。</p>
+</blockquote>
+<p><strong>为这两个类建立一个超类，将相同特性移至超类。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="8-extract-interface-">8. Extract Interface（提炼接口）</h3>
+<blockquote>
+<p>若干客户使用类接口中的同一子集，或者两个类的接口有部分相同。</p>
+</blockquote>
+<p><strong>将相同的子集提炼到一个独立接口中。</strong></p>
+<p>使用率：★★★★★</p>
+<h3 id="9-collapse-hierarchy-">9. Collapse Hierarchy（折叠继承体系）</h3>
+<blockquote>
+<p>超类和子类之间无太大区别。</p>
+</blockquote>
+<p><strong>将它们合为一体。</strong></p>
+<p>使用率：★★☆☆☆</p>
+<h3 id="10-form-template-method-">10. Form Template  Method（塑造模版函数）</h3>
+<blockquote>
+<p>你有一些子类，其中相应的某些函数以相同顺序执行类似的操作，但各个操作的细节上有所不同。</p>
+</blockquote>
+<p><strong>将这些操作分别放进独立函数中，并保持它们都有相同的签名，于是原函数也就变得相同了。然后将原函数上移至超类。</strong></p>
+<p>使用率：★★★★★</p>
+<h3 id="11-replace-inheritance-with-delegation-">11. Replace Inheritance with Delegation（以委托取代继承）</h3>
+<blockquote>
+<p>某个子类只使用超类接口中的一部分，或是根据不需要继承而来的数据。</p>
+</blockquote>
+<p><strong>在子类中新建一个字段用以保存超类；调整子类函数，令它改而委托超类；然后去掉两者之间的继承关系。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="12-replace-delegation-with-inheritance-">12. Replace Delegation with Inheritance（以继承取代委托）</h3>
+<blockquote>
+<p>你在两个类之间使用委托关系，并经常为整个接口编写许多极简单的委托函数。</p>
+</blockquote>
+<p><strong>让委托类继承受托类。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h2 id="-">大型重构</h2>
+<h3 id="1-tease-apart-inheritance-">1. Tease Apart Inheritance（梳理并分解继承体系）</h3>
+<blockquote>
+<p>某个继承体系同时承担两项责任。</p>
+</blockquote>
+<p><strong>建立两个继承体系，并通过委托关系让其中一个可以调用另一个。</strong></p>
+<p>使用率：★★★★★</p>
+<h3 id="2-convert-procedural-design-to-objects-">2. Convert Procedural Design to Objects（将过程化设计转化为对象设计）</h3>
+<blockquote>
+<p>你手上有一些传统过程化风格的代码。</p>
+</blockquote>
+<p><strong>将数据记录变成对象，将大块的行为分成小块，并将行为移入相关对象之中。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="3-separate-domain-from-presentation-">3. Separate Domain from Presentation（将领域和表述/显示分离）</h3>
+<blockquote>
+<p>某些GUI类之中包含了领域逻辑。</p>
+</blockquote>
+<p><strong>将领域逻辑分离出来，为它们建立独立的领域类。</strong></p>
+<p>使用率：★★★★☆</p>
+<h3 id="4-extract-hierarchy-">4. Extract Hierarchy（提炼继承体系）</h3>
+<blockquote>
+<p>你有某个类做了太多工作，其中一部分工作是以大量条件表达式完成的。</p>
+</blockquote>
+<p><strong>建立继承体系，以一个子类表示一种特殊情况。</strong></p>
+<p>使用率：★★★☆☆</p>
+<h2 id="-">重构，复用与现实</h2>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- start footer.html -->
+<style>
+    .site-footer {
+        background-color: #222;  color: white;
+        min-height: 50px;   margin-top: 30px; overflow: hidden;
+        font-size: 14px;  padding: 1em;  letter-spacing: 1px;
+    }
+    .site-info {  text-align: center;  margin-right: -15px;  margin-left: -15px;  }
+    .site-info a:hover{  color: #78909c;  text-decoration: none;  }
+    /* 动态为footer添加类fixed-bottom */
+    .fixed-bottom {position: fixed;bottom: 0;width:100%;}
+</style>
+<script>
+    $(function(){
+        function footerPosition(){
+            $("footer").removeClass("fixed-bottom");
+            var contentHeight = document.body.scrollHeight,//网页正文全文高度
+                winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+            if(!(contentHeight > winHeight)){
+                //当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+                $("footer").addClass("fixed-bottom");
+            } else {
+                $("footer").removeClass("fixed-bottom");
+            }
+        }
+        footerPosition();
+        $(window).resize(footerPosition);
+    });
+</script>
+<footer class="site-footer" id="footer">
+    <div class="site-info">
+        MaiJZ © 2017<span class="sep"> | </span>
+        Powered by <a href="https://github.com/maijz128/shpnode">SHPNode</a>
+    </div>
+</footer>
+<!-- end footer.html-->
+</body>
+</html>
