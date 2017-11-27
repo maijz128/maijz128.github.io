@@ -19,13 +19,15 @@
     </style>
 <!-- end head.html -->
 
-    <title>Soft - MaiJZ</title>
+
+    <title>CentOS6.5安装部署Shadowsocks服务器 - MaiJZ</title>
 
     <!-- start markdown-->
     <link rel="stylesheet" href="/html/css/github-markdown.css">
     <link rel="stylesheet" href="/html/lib/prism/prism.css">
     <script src="/html/lib/prism/prism.js"></script>
     <!-- end markdown-->
+
 
 </head>
 <body>
@@ -122,16 +124,80 @@
 </div>
 <!-- end header.html -->
 
-<div role="main">
+<div role="main" class="maincontent">
     <div class="container-lg clearfix px-3 mt-4">
-        <div class="col-3 float-left pr-3">
-        </div>
+        <div class="col-3 float-left pr-3"></div>
 
         <div class="col-9 float-left pl-2">
-		  <div class="markdown-body">
-                <h4><a href="soft.html">软件整理</a></h4>
-                <h4><a href="centos-6.5-install-shadowsocks-server.html">CentOS6.5安装部署Shadowsocks服务器</a></h4>
+
+            <div class="markdown-body">
+                <h1 id="centos-6-5-shadowsocks-">CentOS 6.5 安装部署Shadowsocks服务器</h1>
+<h2 id="-">安装服务端</h2>
+<p><strong>安装Shadowsocks服务端：</strong></p>
+<pre><code class="lang-shell"># yum update
+# yum install python-setuptools &amp;&amp; easy_install pip
+# pip install shadowsocks
+</code></pre>
+<p><strong>配置Shadowsocks：</strong></p>
+<p>此文件默认不存在，需要创建：</p>
+<pre><code class="lang-shell"># vim /etc/shadowsocks.json
+</code></pre>
+<pre><code class="lang-json">{
+  &quot;server&quot;:&quot;your_server_ip(0.0.0.0)&quot;,
+  &quot;server_port&quot;:8388,
+  &quot;password&quot;:&quot;yourpassword&quot;,
+  &quot;timeout&quot;:300,
+  &quot;method&quot;:&quot;aes-256-cfb&quot;,
+  &quot;fast_open&quot;:false,
+  &quot;workers&quot;: 1
+}
+</code></pre>
+<p>注：代码中各字段的含义：</p>
+<blockquote>
+<p>server：服务器 IP地址 (IPv4/IPv6)</p>
+<p>server_port：服务器监听的端口，一般设为80，443等，注意不要设为使用中的端口</p>
+<p>password：设置密码，自定义</p>
+<p>timeout：超时时间（秒）</p>
+<p>method：加密方法，可选择 “aes-256-cfb”, “rc4-md5”等等。推荐使用 “rc4-md5”</p>
+<p>fast_open：true 或 false。如果你的服务器 Linux 内核在3.7+，可以开启 fast_open 以降低延迟。</p>
+<p>workers：workers数量，默认为 1</p>
+</blockquote>
+<p>如要你需要分享SS服务给朋友或家人，可以配置多个SS账户，具体可以参考下面的代码。</p>
+<pre><code class="lang-json">{
+  &quot;server&quot;:&quot;your_server_ip&quot;,
+  &quot;port_password&quot;:{
+    &quot;8381&quot;:&quot;pass1&quot;,
+    &quot;8382&quot;:&quot;pass2&quot;,
+    &quot;8383&quot;:&quot;pass3&quot;,
+    &quot;8384&quot;:&quot;pass4&quot;
+  },
+  &quot;timeout&quot;:60,
+  &quot;method&quot;:&quot;rc4-md5&quot;,
+  &quot;fast_open&quot;:false,
+  &quot;workers&quot;:1
+}
+</code></pre>
+<p>注意：特别注意json的格式，注意空格和Tab的用法要一致！</p>
+<p><strong>启动Shadowsocks：</strong></p>
+<pre><code class="lang-shell"># ssserver -c /etc/shadowsocks.json -d start
+
+INFO: loading config from /etc/shadowsocks.json
+2017-01-10 22:38:12 WARNING  warning: your timeout 60 seems too short
+2017-01-10 22:38:12 INFO     loading libcrypto from libcrypto.so.10
+started
+</code></pre>
+<p><strong>加入开机自启：</strong></p>
+<pre><code class="lang-shell"># echo &quot;ssserver -c /etc/shadowsocks.json -d start&quot; &gt;&gt; /etc/rc.d/rc.local
+</code></pre>
+<h2 id="-">客户端连接</h2>
+<pre><code>服务器IP  ：your_server_ip
+服务器端口 ：8388
+密码: pass1
+加密：aes-256-cfb
+</code></pre>
             </div>
+
+
         </div>
     </div>
 </div>
