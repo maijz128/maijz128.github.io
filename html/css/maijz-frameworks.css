@@ -162,3 +162,5 @@ table {  border-spacing: 0;  border-collapse: collapse;  }
 .opacity-5-hover:hover{  opacity: 0.5;  }  .opacity-4-hover:hover{  opacity: 0.4;  }
 .opacity-3-hover:hover{  opacity: 0.3;  }  .opacity-2-hover:hover{  opacity: 0.2;  }
 .opacity-1-hover:hover{  opacity: 0.1;  }  .opacity-0-hover:hover{  opacity: 0.0;  }
+
+.cursor-pointer{  cursor: pointer;  }

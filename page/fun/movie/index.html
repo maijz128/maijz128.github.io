@@ -132,17 +132,16 @@
             <div id="movies-container">
                 <div class="category" v-for="(categoryObj,  categoryIndex) in json">
                     <h3 class="f4 mb-2 text-normal band">
-                        <span class="in-band">{{ categoryObj.category }}</span>
-                        <span class="out-of-band">
-                            <span>
-                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
-                                  v-bind:te-closing="categoryObj.closing"
-                                  href="JavaScript:;" title="toggle list">
-                                   <span class="inner toggle-el-show-hint">[−]</span>
-                                   <span class="inner toggle-el-hide-hint">[+]</span>
-                               </a>
-                            </span>
-                        </span>
+                        <div class="cursor-pointer toggle-el-switch"
+                             v-bind:te-target="'category' + categoryIndex"
+                             v-bind:te-closing="categoryObj.closing">
+                            <span class="in-band">{{ categoryObj.category }}</span>
+
+                            <a class="out-of-band" href="JavaScript:;">
+                                <span class="inner toggle-el-show-hint">[−]</span>
+                                <span class="inner toggle-el-hide-hint">[+]</span>
+                            </a>
+                        </div>
                     </h3>
 
                     <ol class="pinned-movies-list list-style-none" v-bind:id="'category' + categoryIndex">

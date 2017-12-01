@@ -273,17 +273,17 @@
                 <div v-for="(pro, proIndex) in projects">
 
                     <h3 class="f4 mb-2 text-normal band">
-                        <span class="in-band">{{ pro.title }}</span>
-                        <span class="out-of-band">
-                            <span>
-                               <a class="toggle-el-switch" v-bind:te-target="'repos' + proIndex"
-                                  v-bind:te-closing="pro.closing"
-                                  href="JavaScript:;" title="toggle list">
-                                   <span class="inner toggle-el-show-hint">[−]</span>
-                                   <span class="inner toggle-el-hide-hint">[+]</span>
-                               </a>
-                            </span>
-                        </span>
+                        <div class="cursor-pointer toggle-el-switch"
+                             v-bind:te-target="'repos' + proIndex"
+                             v-bind:te-closing="pro.closing">
+
+                            <span class="in-band">{{ pro.title }}</span>
+
+                            <a class="out-of-band" href="JavaScript:;">
+                                <span class="inner toggle-el-show-hint">[−]</span>
+                                <span class="inner toggle-el-hide-hint">[+]</span>
+                            </a>
+                        </div>
                     </h3>
 
                     <ol class="pinned-repos-list" v-bind:id="'repos' + proIndex">

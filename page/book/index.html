@@ -134,17 +134,17 @@
 
                 <div class="books-category" v-for="(categoryObj,  categoryIndex) in json">
                     <h3 class="f4 mb-2 text-normal band">
-                        <span class="in-band">{{ categoryObj.category }}</span>
-                        <span class="out-of-band">
-                            <span>
-                               <a class="toggle-el-switch" v-bind:te-target="'category' + categoryIndex"
-                                  v-bind:te-closing="categoryObj.closing"
-                                  href="JavaScript:;" title="toggle list">
-                                   <span class="inner toggle-el-show-hint">[−]</span>
-                                   <span class="inner toggle-el-hide-hint">[+]</span>
-                               </a>
-                            </span>
-                        </span>
+                        <div class="cursor-pointer toggle-el-switch"
+                             v-bind:te-target="'category' + categoryIndex"
+                             v-bind:te-closing="categoryObj.closing">
+
+                            <strong class="in-band">{{ categoryObj.category }}</strong>
+
+                            <a class="out-of-band" href="JavaScript:;">
+                                <span class="inner toggle-el-show-hint">[−]</span>
+                                <span class="inner toggle-el-hide-hint">[+]</span>
+                            </a>
+                        </div>
                     </h3>
 
                     <ol class="pinned-books-list" v-bind:id="'category' + categoryIndex">
@@ -152,7 +152,8 @@
                         <li class="pinned-book-item" v-for="book in categoryObj.books">
 
                             <div class="book-pic">
-                                <a class="nbg" v-bind:href="getDoubanURL(book)" v-bind:title="book.name" target="_blank">
+                                <a class="nbg" v-bind:href="getDoubanURL(book)" v-bind:title="book.name"
+                                   target="_blank">
                                     <img v-bind:src="getPictureURL(book)" rel="v:photo" style="width: 135px">
                                 </a>
                             </div>
@@ -160,7 +161,7 @@
 
                             <div class="pinned-book-item-content">
                                 <span class="d-block position-relative">
-                                    <a v-bind:href="getDoubanURL(book)" class="text-bold"  target="_blank">
+                                    <a v-bind:href="getDoubanURL(book)" class="text-bold" target="_blank">
                                         <span v-bind:title="book.name">{{ book.name }}</span>
                                     </a>
                                 </span>
@@ -174,7 +175,7 @@
                                 <p class="mb-0 f6 text-gray">
                                     Reading: {{ book.pviews }}
 
-                                    <a title="douban" class="pinned-meta muted-link"  target="_blank"
+                                    <a title="douban" class="pinned-meta muted-link" target="_blank"
                                        v-bind:href="getDoubanURL(book)"
                                        v-show="book.links.douban">
                                         <svg class="octicon" height="16" role="img"

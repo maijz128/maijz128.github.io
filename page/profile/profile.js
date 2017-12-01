@@ -8,26 +8,41 @@ const Data_Profile = {
     "userName": "maijz128",
     "projects": [
         {
+            "title": "项目",
+            "repos": [
+                "shpnode",
+                "bilibili-index-icon",
+                "github-update-checker"
+            ]
+        },
+        {
+            "title": "练手项目",
+            "closing": false,
+            "repos": [
+                "ExpressionCalculator",
+                "voxel-model"
+            ]
+        },
+        {
+            "title": "其他",
+            "closing": false,
+            "repos": [
+                "Tampermonkey-Scripts",
+                "AutoHotkey-Scripts"
+            ]
+        },
+        {
             "title": "笔记",
             "repos": [
                 "Rust"
             ]
         },
         {
-            "title": "项目",
+            "title": "废弃",
+            "closing": true,
             "repos": [
-                "shpnode",
-                "voxel-model",
                 "AutoUnlock",
-                "bilibili-index-icon",
-                "Checker-for-Jandan",
-                "github-update-checker"
-            ]
-        },
-        {
-            "title": "练手项目",
-            "closing" : true,
-            "repos": [
+                "Checker-for-Jandan"
             ]
         }
     ]
