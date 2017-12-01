@@ -104,6 +104,32 @@ const Data_Books = [
         ]
     },
     {
+        "category": "软件测试",
+        "closing": false,
+        "books": [
+            {
+                "name": "测试驱动开发",
+                "name_original": "Test Driven Development: By Example",
+                "bio": "必读",
+                "pviews": "1",
+                "links": {
+                    "douban": "1230036"
+                },
+                "image": "s1441607.jpg"
+            },
+            {
+                "name": "单元测试之道-使用JUnit(Java版)",
+                "name_original": "Pragmatic Unit Testing",
+                "bio": "推荐",
+                "pviews": "1",
+                "links": {
+                    "douban": "1239651"
+                },
+                "image": "s1874809.jpg"
+            }
+        ]
+    },
+    {
         "category": "C++",
         "closing": false,
         "books": [
