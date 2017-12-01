@@ -19,13 +19,15 @@
     </style>
 <!-- end head.html -->
 
-    <title>笔记 - MaiJZ</title>
+
+    <title>MySQL笔记 - MaiJZ</title>
 
     <!-- start markdown-->
     <link rel="stylesheet" href="/html/css/github-markdown.css">
     <link rel="stylesheet" href="/html/lib/prism/prism.css">
     <script src="/html/lib/prism/prism.js"></script>
     <!-- end markdown-->
+
 
 </head>
 <body>
@@ -124,16 +126,167 @@
 
 <div role="main" class="maincontent">
     <div class="container-lg clearfix px-3 mt-4">
-        <div class="col-3 float-left pr-3"></div>
-
-        <div class="col-9 float-left pl-2">
+        <div class="col-10 offset-1">
 
             <div class="markdown-body">
-                <h4><a href="/page/note/front-end-index.html">前端整理</a></h4>
-                <h4><a href="/page/note/git-usage.html">Git使用笔记</a></h4>
-                <h4><a href="/page/note/use/mysql.html">MySQL笔记</a></h4>
-                <h4><a href="/page/note/shortcut-keys.html">常用快捷键</a></h4>
-                <h4><a href="/page/note/book-refactor.html">重构-改善既有代码的设计</a></h4>
+                <h1 id="mysql-">MySQL使用笔记</h1>
+<h2 id="-mysql">安装MySQL</h2>
+<ul>
+<li><p>检查是否安装mysql</p>
+<pre><code>rpm -qa | grep mysql
+</code></pre></li>
+<li><p>安装</p>
+<pre><code>yum install mysql
+yum install mysql-server
+yum install mysql-devel
+</code></pre></li>
+<li><p>验证安装</p>
+<pre><code>mysqladmin --version
+</code></pre></li>
+<li><p>卸载</p>
+<pre><code>rpm -e mysql　　// 普通删除模式
+rpm -e --nodeps mysql　　
+// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
+</code></pre></li>
+</ul>
+<h2 id="-mysql">启动及关闭 MySQL</h2>
+<ul>
+<li><p>检查是否运行</p>
+<pre><code>  /etc/rc.d/init.d/mysqld status
+</code></pre></li>
+<li><p>启动</p>
+<pre><code>  service mysqld start
+</code></pre></li>
+<li><p>关闭</p>
+<pre><code>  /etc/init.d/mysqld stop
+</code></pre></li>
+<li><p>重启</p>
+<pre><code>  service mysqld restart
+</code></pre><p> ​</p>
+</li>
+</ul>
+<h2 id="mysql-">MySQL用户管理</h2>
+<p>MySQL安装成功后，默认的root用户密码为空，为了安全起见给root设置密码：</p>
+<pre><code>mysqladmin -u root password 123 (123为密码，也可以写成:&#39;123&#39;或&quot;123&quot;)
+</code></pre><ul>
+<li><p>登录</p>
+<pre><code>  mysql -u root -p
+</code></pre></li>
+<li><p>添加用户</p>
+<pre><code>  mysql&gt; create user  zx_root   IDENTIFIED by &#39;xxxxx&#39;;   
+  //identified by 会将纯文本密码加密作为散列值存储
+</code></pre></li>
+<li><p>删除用户</p>
+<pre><code>  mysql&gt;delete from mysql.user where user =&#39;testuser&#39; ;
+
+  mysql&gt;flush privileges; (刷新系统权限表)
+</code></pre><pre><code>  mysql&gt;drop user newuser;   
+  //mysql5之前删除用户时必须先使用revoke 删除用户权限，然后删除用户，mysql5之后drop 命令可以删除用户的同时删除用户的相关权限
+</code></pre></li>
+<li><p>设置密码</p>
+<pre><code>  mysql&gt; set password for testuser =password(&#39;xxxxxx&#39;);
+</code></pre><pre><code>  mysql&gt; update  mysql.user  set  password=password(&#39;xxxx&#39;)  where user=&#39;otheruser&#39;
+</code></pre><pre><code>  #mysqladmin -u root password &quot;new_password&quot;
+</code></pre></li>
+<li><p>忘记密码</p>
+<ul>
+<li><p>找到自己的<code>my.cnf</code>文件，通常会在 /etc目录下（如果不在，可以用<code>find / -name my.cnf</code>命令找一下）</p>
+</li>
+<li><p>然后使用 <code>vim my.cnf</code> 命令编辑该文件（建议先备份），在<code>[mysqld]</code>下面加上 <code>skip-grant-tables</code> ，作用是登陆时跳过登陆认证，然后<code>:wq</code>保存退出</p>
+</li>
+<li><p>然后用<code>service mysqld restart</code>重启mysql，接下来输入如下命令：</p>
+<pre><code># mysql -uroot -p
+
+mysql&gt; use mysql; 
+mysql&gt; update user set password=password(&#39;123&#39;) where user=&#39;root&#39;; 
+mysql&gt; flush privileges; (刷新系统权限表)
+
+退出mysql
+</code></pre></li>
+<li><p>删除<code>my.cnf</code>中的 <code>skip-grant-tables</code>，重启mysql，完成。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="-">权限管理</h3>
+<ul>
+<li>查看用户权限    </li>
+</ul>
+<pre><code>mysql&gt; show grants for testuser;
+</code></pre><ul>
+<li>设置用户访问数据库权限</li>
+</ul>
+<pre><code>&gt;&gt; grant all privileges on test_db.* to testuser@localhost identified by &quot;123456&quot;;
+//设置用户testuser，只能访问数据库test_db，其他数据库均不能访问 ；
+
+&gt;&gt; grant all privileges on *.* to testuser@localhost identified by &quot;123456&quot;;
+//设置用户testuser，可以访问mysql上的所有数据库 ；
+
+&gt;&gt; grant all privileges on test_db.user_infor to testuser@localhost identified by &quot;123456&quot;;
+//设置用户testuser，只能访问数据库test_db的表user_infor，数据库中的其他表均不能访问 ；
+</code></pre><ul>
+<li>设置用户操作权限</li>
+</ul>
+<pre><code>&gt;&gt; grant all privileges on *.* to testuser@localhost identified by &quot;123456&quot; WITH GRANT OPTION;
+//设置用户testuser，拥有所有的操作权限，也就是管理员 ；
+
+&gt;&gt; grant select on *.* to testuser@localhost identified by &quot;123456&quot; WITH GRANT OPTION;
+//设置用户testuser，只拥有【查询】操作权限 ；
+
+&gt;&gt; grant select,insert on *.* to testuser@localhost identified by &quot;123456&quot;;
+//设置用户testuser，只拥有【查询\插入】操作权限 ；
+
+&gt;&gt; grant select,insert,update,delete on *.* to testuser@localhost identified by &quot;123456&quot;;
+//设置用户testuser，只拥有【查询\插入】操作权限 ；
+
+&gt;&gt; REVOKE select,insert ON what FROM testuser
+//取消用户testuser的【查询\插入】操作权限 ；
+</code></pre><ul>
+<li>设置用户远程访问权限</li>
+</ul>
+<pre><code>&gt;&gt; grant all privileges on *.* to testuser@&quot;192.168.1.100&quot; identified by &quot;123456&quot; ;
+//设置用户testuser，只能在客户端IP为192.168.1.100上才能远程访问mysql
+</code></pre><ul>
+<li>关于root用户的访问设置</li>
+</ul>
+<p>设置所有用户可以远程访问mysql，修改my.cnf配置文件，将bind-address = 127.0.0.1前面加“#”注释掉，这样就可以允许其他机器远程访问本机mysql了；</p>
+<pre><code>&gt;&gt; grant all privileges on *.* to root@&quot;%&quot; identified by &quot;123456&quot; ;
+//设置用户root，可以在远程访问mysql
+
+&gt;&gt; select host,user from user;
+//查询mysql中所有用户权限
+
+关闭root用户远程访问权限
+
+&gt;&gt; delete from user where user=&quot;root&quot; and host=&quot;%&quot; ;
+//禁止root用户在远程机器上访问mysql
+
+&gt;&gt; flush privileges ;
+//修改权限之后，刷新MySQL的系统权限相关表方可生效
+</code></pre><h2 id="-">管理命令</h2>
+<ul>
+<li>SHOW DATABASES<ul>
+<li>列出数据库列表</li>
+</ul>
+</li>
+<li>USE <em>数据库名</em><ul>
+<li>选择要操作的数据库</li>
+</ul>
+</li>
+<li>SHOW TABLES<ul>
+<li>显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。</li>
+</ul>
+</li>
+<li>SHOW COLUMNS FROM <em>数据表</em><ul>
+<li>显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息。</li>
+</ul>
+</li>
+<li>SHOW INDEX FROM <em>数据表</em><ul>
+<li>显示数据表的详细索引信息，包括PRIMARY KEY（主键）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="-">备份</h2>
             </div>
 
         </div>
